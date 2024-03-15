@@ -1,0 +1,76 @@
+/* エディター用のスタイル */
+#tinymce {
+  font-family: ヒラギノ角ゴシック, sans-serif;
+}
+
+/* 見出し */
+#tinymce h2 {
+  padding: 20px;
+  margin-top: 50px;
+  font-size: 20px;
+  color: #fff;
+  background-image: linear-gradient(#0502b3 50%, #00036d 50%);
+}
+
+#tinymce h3 {
+  position: relative;
+  padding-left: 25px;
+  margin: 40px 0 27px;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+#tinymce h3::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 5px;
+  height: 100%;
+  content: "";
+  background-image: linear-gradient(#487cff, #d5e1ff);
+}
+
+/* リスト */
+#tinymce ul {
+  padding-left: 25px;
+  margin: 30px 0;
+}
+
+#tinymce ul > li {
+  display: flex;
+  margin-top: 20px;
+  font-weight: bold;
+  line-height: 155%;
+  color: #0a377b;
+}
+
+#tinymce ul > li::before {
+  display: inline-block;
+  width: 26px;
+  min-width: 26px;
+  height: 26px;
+  margin-right: 10px;
+  vertical-align: sub;
+  content: "";
+  background-image: url(./dist/img/checkbox-new.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#tinymce p {
+  margin-top: 40px;
+  line-height: 2.1;
+}
+
+/* 各項目の手順の背景 */
+#tinymce .blue-box {
+  padding: 32px 44px 0px 30px;
+  margin: 30px 0;
+  background: #f2f7ff;
+}
+
+#tinymce .blue-box p {
+  padding-bottom: 30px;
+  margin: 0;
+}

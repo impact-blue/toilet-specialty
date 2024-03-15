@@ -1,0 +1,315 @@
+#post-list {
+  .heading {
+    @include bg_water_surface();
+    margin: 0 0 50px;
+    @include breakpoint() {
+      display: inline-block;
+      height: auto;
+      padding: 110px 15px 0;
+      text-align: center;
+    }
+  }
+
+  // 投稿アイテム
+  .post-item {
+    display: flex;
+    padding: 0 0 28px;
+    border-bottom: 1px solid #bcbcbc;
+
+    @include breakpoint() {
+      display: block;
+      padding: 0 0 20px;
+    }
+
+    &:not(:first-child) {
+      padding: 28px 0;
+
+      @include breakpoint() {
+        padding: 20px 0;
+      }
+    }
+
+    .item-left {
+      max-width: 200px;
+      padding: 0 30px 0 0;
+
+      @include breakpoint() {
+        max-width: initial;
+        padding: 0;
+      }
+
+      .item-left-img {
+        @include breakpoint() {
+          position: relative;
+          overflow: hidden;
+          padding-top: 55%;
+        }
+
+        img {
+          width: 200px;
+          height: 140px;
+          border-radius: 0px 10px;
+          object-fit: cover;
+
+          @include breakpoint() {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .item-right {
+      font-size: 12px;
+      color: $base_gray;
+
+      .ttl {
+        margin: 0 0 16px;
+        a {
+          font-size: 20px;
+          line-height: 1.4;
+          color: $base_dark_blue;
+          letter-spacing: 1px;
+
+          @include breakpoint() {
+            font-size: 18px;
+          }
+        }
+
+        @include breakpoint() {
+          display: block;
+          margin: 10px 0 0;
+        }
+      }
+
+      .description {
+        margin: 0 0 12px;
+        line-height: 1.6;
+
+        @include breakpoint() {
+          display: none;
+        }
+      }
+
+      .date-area {
+        display: flex;
+        align-items: flex-end;
+
+        @include breakpoint() {
+          display: block;
+          font-size: 12px;
+          text-align: right;
+          margin: 5px 0 0;
+        }
+      }
+    }
+  }
+
+  // エリアページ
+  &.area-page {
+    .container {
+      max-width: 1000px;
+      a {
+        cursor: pointer;
+      }
+      .area-block {
+        margin: 60px 0;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+        border-radius: 10px;
+
+        @include breakpoint() {
+          max-width: 355px;
+          margin: 30px auto;
+
+          &:last-child {
+            margin: 30px auto 58px;
+          }
+        }
+
+        .area-block-ttl {
+          padding: 30px 0 25px;
+          margin: 0 !important;
+          font-size: 24px;
+          line-height: 100%;
+          color: #fff;
+          text-align: center;
+          background: url(../img/suidou-route-about.jpg) center;
+          border-radius: 10px 10px 0 0;
+
+          @include breakpoint() {
+            padding: 16px 0;
+            font-size: 16px;
+          }
+        }
+
+        .areas {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 52px 88px 50px;
+          background-color: #fff;
+          border-radius: 0 0 10px 10px;
+
+          @include breakpoint() {
+            padding: 28px 55px 16px 23px;
+          }
+          li {
+            position: relative;
+            display: block;
+            width: 112px;
+            padding: 0 0 0 14px;
+            margin: 0 0 15px 20px;
+            font-weight: normal;
+            color: #000;
+            &::before {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: -20px;
+              width: 0;
+              height: 0;
+              margin: auto;
+              content: "";
+              border-color: transparent transparent transparent #0c7ed3;
+              border-style: solid;
+              border-width: 10px 0 10px 20px;
+              @include breakpoint() {
+                left: -13px;
+                border-width: 5px 0 5px 10px;
+              }
+            }
+            .area-link {
+              font-size: 20px;
+              line-height: 170%;
+              text-decoration: underline;
+            }
+            @include breakpoint() {
+              width: 50px;
+              padding: 0;
+              margin: 0 4px 15px 15px;
+              .area-link {
+                font-size: 12px;
+              }
+            }
+            .area-modal-wrapper {
+              position: fixed;
+              top: 0; bottom: 0; right: 0; left: 0;
+              pointer-events: none;
+              opacity: 0;
+              transition-duration: .3s;
+              z-index: 9999;
+              &.active {
+                opacity: 1;
+                pointer-events: auto;
+              }
+              .area-modal-bg {
+                position: absolute;
+                width: 100%; height: 100%;
+                background-color: rgba(0,0,0,.6);
+              }
+              .area-modal {
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
+                width: calc(100% - 32px);
+                max-width: 1200px;
+                margin: 0 !important;
+                .area-modal-close {
+                  position: absolute;
+                  top: 0; right: 0;
+                  transform: translateY(-100%);
+                  font-size: 40px;
+                  line-height: 1;
+                  cursor: pointer;
+                  font-weight: lighter;
+                  color: #fff;
+                  @media screen and (max-width: 460px) {
+                    font-size: 28px;
+                  }
+                }
+                .area-block-ttl {
+                  text-decoration: underline;
+                }
+                @include breakpoint() {
+                  .areas li {
+                    width: 33.333%;
+                    min-width: unset;
+                  }
+                  .area-link {
+                    padding: 0 1.4vw;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // ページネーション
+  .paginate {
+    @include paginate_style();
+  }
+
+  // もっと見る
+  .more {
+    font-size: 16px;
+    color: $base_blue;
+    font-weight: bold;
+    margin: 40px 0;
+    text-align: center;
+  }
+  // 施工事例タグ表
+  .sekou-tags {
+    margin-bottom: 30px;
+    .sekou-tags-ttl {
+      background-color: $base_blue;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+    }
+    .sekou-tags-list {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      width: 100%;
+      background-color: $base_light_blue;
+      .sekou-tags-item {
+        width: 100%;
+        &:not(:first-child) {
+          border-left: 1px solid #fff;
+        }
+        a {
+          padding: 10px;
+          display: block;
+          text-align: center;
+          font-size: 16px;
+          @include breakpoint() {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+._small-area {
+  margin: 0 !important;
+}
+
+.date-area._article {
+  max-width: 1200px;
+  margin: -45px auto 30px;
+  padding: 0 30px 0;
+  text-align: right;
+  font-size: 0.8rem;
+  color: gray;
+
+  @include breakpoint() {
+    font-size: 12px;
+    padding: 0 20px 0;
+  }
+}

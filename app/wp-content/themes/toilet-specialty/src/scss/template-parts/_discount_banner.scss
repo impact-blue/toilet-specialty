@@ -1,0 +1,51 @@
+.discount-banner {
+  padding: 2.7vw 15px 3.4vw;
+  @include breakpoint() {
+    padding: 6.4vw 3.3vw;
+  }
+  img {
+    width: 5.5vw;
+    margin: 0 0.85vw 0 0;
+    @include breakpoint() {
+      width: 10.2vw;
+    }
+  }
+  p {
+    font-size: clamp(12px, 2.1vw, 25px);
+    @include breakpoint() {
+      font-size: clamp(12px, 4.4vw, 33px);
+    }
+  }
+  span {
+    font-size: clamp(14px, 2.5vw, 35px);
+    @include breakpoint() {
+      font-size: clamp(14px, 6.5vw, 49px);
+    }
+  }
+  .inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 1vw 0;
+    margin: 0 auto;
+    background-color: #3667c1;
+    border-radius: 10px;
+    @include breakpoint() {
+      flex-direction: column;
+      gap: 1.6vw 0;
+      padding: 3.6vw 0 2.6vw;
+    }
+  }
+  .upper {
+    display: flex;
+    align-items: center;
+  }
+  .hp-only {
+    @include breakpoint() {
+      font-size: clamp(12px, 4.4vw, 33px);
+    }
+  }
+}

@@ -1,0 +1,150 @@
+#page {
+  // タイトル
+  .heading {
+    padding: 64px 0 30.5px;
+    font-size: 30px;
+    line-height: 1;
+    border-bottom: 1px solid #000;
+
+    @include breakpoint() {
+      padding: 41px 0 15.5px;
+      font-size: 20px;
+    }
+  }
+
+  // プライバシーポリシー
+  .policy {
+    margin: 0 0 166px;
+    font-size: 14px;
+    line-height: 1.7;
+
+    @include breakpoint() {
+      margin: 0 0 90px;
+    }
+
+    h2 {
+      padding: 3px 10px 3px 20px;
+      margin: 30px 0 20px;
+      font-size: 20px;
+      border-left: 6px solid $base_light_blue;
+
+      @include breakpoint() {
+        margin: 30px 0 15px;
+        font-size: 18px;
+      }
+    }
+
+    p {
+      padding: 0 0 4px;
+    }
+  }
+
+  // 会社概要
+  .company {
+    @include breakpoint() {
+      padding: 0 10px 0 11px;
+    }
+
+    table {
+      width: 100%;
+      margin: 45px 0 166px;
+      border: 1px solid #d5d5d5;
+
+      @include breakpoint() {
+        margin: 20.5px 0 94px;
+      }
+
+      tr {
+        td {
+          width: 70%;
+          padding: 23px 31px;
+          line-height: 2.1;
+          border: 1px solid #d5d5d5;
+
+          @include breakpoint() {
+            padding: 23px 15px;
+            font-size: 14px;
+            line-height: 1.7;
+          }
+
+          &:nth-child(2n + 1) {
+            width: 30%;
+            background: $base_light_blue;
+          }
+        }
+      }
+    }
+  }
+
+  // サイトマップ
+  .sitemap {
+    margin: 30px auto 166px;
+
+    @include breakpoint() {
+      margin: 15px auto 90px;
+    }
+
+    .wsp-pages-title {
+      display: none;
+    }
+
+    h2 {
+      position: relative;
+      padding: 13px 30px 11px;
+      margin: 50px 0 33px;
+      background: #f5f9ff;
+
+      @include breakpoint() {
+        margin: 30px 0 15px;
+        font-size: 18px;
+      }
+
+      &::before {
+        position: absolute;
+        top: 8px;
+        left: 14px;
+        width: 6px;
+        height: 25px;
+        content: "";
+        border-left: 6px solid $base_light_blue;
+      }
+    }
+
+    ul {
+      line-height: 1.7;
+      li {
+        padding: 0 0 0 22px;
+        a {
+          color: $base_dark_blue;
+        }
+      }
+    }
+  }
+
+  // 404ページ
+  .page-404 {
+    .message-box {
+      padding: 12px;
+      margin: 60px 0 166px;
+      line-height: 160%;
+      border: 2px solid $base_dark_blue;
+
+      @include breakpoint() {
+        margin: 20.5px 0 94px;
+      }
+
+      h1 {
+        margin: 0 0 20px;
+        font-size: 2rem;
+        line-height: 150%;
+      }
+
+      ul {
+        margin: 18px;
+        li {
+          list-style: disc;
+        }
+      }
+    }
+  }
+}

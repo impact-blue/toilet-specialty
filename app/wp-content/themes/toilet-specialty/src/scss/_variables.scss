@@ -1,0 +1,28 @@
+// サイト内で使用する色
+$base_dark_blue: #043377;
+$base_royal_blue: #1b43ab;
+$base_blue: #1a42aa;
+$base_vivid_blue: #0077c1;
+$base_sky_blue: #42a5f5;
+$base_light_blue: #e5efff;
+
+$base_light_turquoise: #edfdff;
+
+$base_gray: #7c7c7c;
+$base_light_gray: #bdbdbd;
+$sekou_gray: #C9C9C9;
+$sekou_light_gray: #F8F8F8;
+
+$base_carmine: #ef033b;
+$base_orange: #fd391e;
+$base_vivid_orange: #fd7e00;
+$base_red: #fe405c;
+
+$base_yellow: #ffea00;
+$base_light_yellow: #ffee96;
+
+// ブレイクポイント
+$breakpoints: (
+  "sp": "screen and (max-width: 768px)",
+  "tablet": "screen and (max-width: 1025px)"
+) !default;

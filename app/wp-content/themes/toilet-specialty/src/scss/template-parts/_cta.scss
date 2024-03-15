@@ -1,0 +1,604 @@
+// CTA
+.new-cta {
+  position: relative;
+  left: calc(-50vw + 50%);
+  display: block;
+  width: 100vw;
+  margin-top: 20px;
+  @include breakpoint() {
+    background-color: $base_light_blue;
+  }
+  img {
+    object-fit: contain;
+  }
+  .achievement-banner {
+    width: 100%;
+    padding: 20.5px 0 18.5px 0;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    background-color: $base_royal_blue;
+    @include breakpoint() {
+      padding: 2.3vw 0;
+      font-size: max(12px, calc((100vw - 38px) / 23));
+    }
+    .yellow {
+      color: $base_yellow;
+    }
+    .emphasis {
+      font-size: 1.2em;
+    }
+    p {
+      margin: 0 !important;
+      line-height: 1.3 !important;
+    }
+  }
+  .inner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    padding: 1.9vw 0 0;
+    margin: 0 auto;
+    @include breakpoint() {
+      padding: 0 3.6vw 3.2vw;
+    }
+  }
+  .ballon {
+    position: relative;
+    top: -4.1vw;
+    z-index: 2;
+    display: flex;
+    width: 14.28vw;
+    min-width: 150px;
+    max-width: 200px;
+    height: 14.28vw;
+    min-height: 150px;
+    max-height: 200px;
+    margin: 0 3.6vw 0 0;
+    word-break: keep-all;
+    background-color: $base_carmine;
+    border-radius: 100px;
+    @include breakpoint() {
+      top: -2.5vw;
+      width: auto;
+      height: 14.5vw;
+      min-width: auto;
+      max-width: none;
+      min-height: auto;
+      max-height: none;
+      padding: 2.5vw;
+      margin: 0 4.1vw 0 0;
+      border-radius: 10px;
+      transform: scale(.9) translate(-20%, 10%);
+    }
+    &::after {
+      position: absolute;
+      top: calc(50% - 23px);
+      right: -3vw;
+      z-index: -1;
+      width: 0;
+      height: 0;
+      content: "";
+      border-top: 23px solid transparent;
+      border-bottom: 23px solid transparent;
+      border-left: 67px solid $base_carmine;
+      @include breakpoint() {
+        right: -3.3vw;
+      }
+    }
+    p {
+      margin: auto !important;
+      font-size: clamp(16px, 1.5vw, 18px);
+      line-height: 30px !important;
+      color: white;
+      text-align: center;
+      @include breakpoint() {
+        font-size: 2.5vw;
+        line-height: 1.3 !important;
+        padding: 2vw 0 0 0;
+      }
+    }
+    .emphasis {
+      font-size: 1.5em;
+      font-weight: bold;
+      @include breakpoint() {
+        font-size: 1.3em;
+      }
+    }
+    &.is-pc {
+      @include breakpoint() {
+        display: none;
+      }
+    }
+
+    &.is-sp {
+      display: none;
+
+      @include breakpoint() {
+        display: block;
+      }
+    }
+  }
+  .header {
+    margin: .5vw 0 !important;
+    font-size: clamp(14px, 1.8vw, 19px);
+    line-height: 1 !important;
+    color: $base_royal_blue;
+    text-align: center;
+    span {
+      font-size: min(2.4vw, 31px);
+
+      @include breakpoint() {
+        font-size: 4vw;
+      }
+    }
+    .bold {
+      font-size: min(3vw, 38px);
+      display: inline-block;
+      padding-bottom: 10px;
+
+      @include breakpoint() {
+        display: block;
+        padding: 0 0 1.9vw;
+        font-size: 4.5vw;
+      }
+    }
+  }
+  .tel-imgs {
+    max-width: 580px;
+    height: 62px;
+    margin: 0.9vw 0 0;
+    @include breakpoint() {
+      margin: 4.1vw 0 0;
+    }
+
+    &-wrap {
+      @include breakpoint() {
+        transform: scale(.75) translateX(-25%);
+      }
+    }
+  }
+  .icon {
+    width: 16.3% !important;
+    margin: 0 2.28% 0 0 !important;
+    @include breakpoint() {
+      width: 12vw !important;
+      margin: 0 1.6vw 0 0 !important;
+    }
+  }
+  .number {
+    width: 72% !important;
+    @include breakpoint() {
+      width: 59vw !important;
+    }
+  }
+  .reception-time {
+    margin: 0.75vw 0 0 -10px !important;
+    font-size: clamp(10px, 1.3vw, 16px);
+    line-height: 1;
+    color: $base_royal_blue;
+    @include breakpoint() {
+      width: 95.8vw;
+      height: auto;
+      margin: 3vw 0 0 -0.5em !important;
+    }
+    span {
+      font-size: 1.2em;
+      color: $base_carmine;
+    }
+  }
+  .sp-bottom {
+    padding: 0 5.6vw;
+
+    &-wrap {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .tel-annotation {
+    font-size: min(16px, 1.6vw);
+    color: $base_vivid_orange;
+    text-align: center;
+    margin: 1.25vw 0 !important;
+    font-weight: bold;
+    @include breakpoint() {
+      margin: max(8px, 2.2vw) 0 0 !important;
+      font-size: max(12px, 3.7vw);
+    }
+  }
+}
+
+// cta-2
+.post-content .new-cta-2 {
+  margin: 0 calc(50% - 50vw);
+  p {
+    line-height: 1.2;
+  }
+  ul {
+    margin: 0;
+    li {
+      margin: 0;
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+.new-cta-2 {
+  position: relative;
+  padding: 0 0 2.3vw 0;
+
+  @include breakpoint() {
+    padding: 0 0 3vw 0;
+  }
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 4.6vw;
+    content: "";
+    background-color: $base_sky_blue;
+    @include breakpoint() {
+      height: 10vw;
+    }
+  }
+  &._small {
+    &::after {
+      display: none;
+    }
+  }
+  img {
+    object-fit: contain;
+  }
+  .achievement-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2vw 0 1.4vw;
+    font-size: clamp(14px, 1.5vw, 22px);
+    color: #fff;
+    background-color: $base_royal_blue;
+    @include breakpoint() {
+      justify-content: left;
+      padding: 0 0 3.4vw;
+      font-size: clamp(12px, 4.1vw, 31px);
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 7.3vw;
+      width: min(13.4vw, 228px);
+      @include breakpoint() {
+        left: 3.2vw;
+        width: 25.1vw;
+      }
+    }
+    p {
+      width: 56.5vw;
+      text-align: center;
+      margin: 0;
+      @include breakpoint() {
+        width: 100%;
+        padding: 3.4vw 5.3vw 0 33.6vw;
+        line-height: 1.7;
+      }
+    }
+    .emphasis {
+      font-size: 1.3em;
+      @include breakpoint() {
+        font-size: 1.4em;
+        line-height: 1.2;
+      }
+    }
+  }
+  .cta-time {
+    position: relative;
+    left: 24.2vw;
+    display: inline-flex;
+    margin: 0.7vw 0 0;
+    overflow: hidden;
+    border-radius: 1.1vw;
+    @include breakpoint() {
+      left: 0;
+      flex-direction: column;
+      width: 94.8vw;
+      margin: 2.6vw 2.6vw 0;
+      border-radius: 7.5px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7vw 1.1vw;
+      font-size: clamp(10px, 1.1vw, 15px);
+      color: #fff;
+      background-color: $base_sky_blue;
+      @include breakpoint() {
+        padding: 1.3vw 1.1vw;
+        font-size: clamp(12px, 3.1vw, 23px);
+      }
+    }
+    .body {
+      padding: 0.7vw 1.1vw;
+      font-size: clamp(12px, 1.35vw, 19px);
+      color: $base_royal_blue;
+      background-color: #ededed;
+      @include breakpoint() {
+        padding: 1.3vw 1.1vw;
+        font-size: clamp(12px, 3.5vw, 27px);
+        text-align: center;
+      }
+      .time {
+        color: $base_sky_blue;
+      }
+    }
+  }
+  .under-line-text {
+    position: relative;
+    left: 24.2vw;
+    margin: 1.2vw 0 0;
+    @include breakpoint() {
+      left: 31.1vw;
+      margin: 8vw 0 0;
+      line-height: 1.2;
+    }
+    span {
+      position: relative;
+      padding: 0 0 0.5vw;
+      font-size: clamp(16px, 2.7vw, 38px);
+      color: $base_royal_blue;
+      background: linear-gradient(transparent 70%, $base_yellow 0%);
+      @include breakpoint() {
+        font-size: clamp(16px, 6.4vw, 48px);
+      }
+    }
+  }
+  .tel-wrapper {
+    position: relative;
+    left: 7.3vw;
+    @include breakpoint() {
+      left: 0;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      margin: 6vw 2.4vw 0 1.7vw;
+    }
+    .reception-time {
+      width: min(59.5vw, 833px);
+      height: auto;
+      margin: 1.1vw 0 0 -0.5em;
+      @include breakpoint() {
+        width: 95.8vw;
+      }
+    }
+  }
+  .tel-annotation {
+    font-size: 1.7vw;
+    margin: 1.4vw 0 0;
+    color: $base_vivid_orange;
+    padding-left: 12.3vw;
+    font-weight: bold;
+    @include breakpoint() {
+      text-align: center;
+      padding: 0;
+      font-size: max(3.7vw, 12px);
+      margin: max(2.2vw, 8px);
+    }
+  }
+  .pay-method {
+    position: relative;
+    left: 7.3vw;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 87.6vw;
+    margin: 1.6vw 0 0;
+    background-color: #fff;
+    border: 2px solid $base_royal_blue;
+
+    &._small {
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include breakpoint() {
+        margin: 1.6vw 0 0;
+      }
+    }
+
+    @include breakpoint() {
+      left: 0;
+      flex-direction: column;
+      width: calc(93.4vw - 4px);
+      margin: 2.6vw 3.3vw 0;
+    }
+    .header {
+      padding: 1.7vw 1.8vw;
+      font-size: clamp(14px, 1.7vw, 24px);
+      color: #fff;
+      white-space: nowrap;
+      background-color: $base_royal_blue;
+      @include breakpoint() {
+        width: 100%;
+        padding: 2vw 0;
+        font-size: clamp(10px, 3.2vw, 24px);
+        text-align: center;
+      }
+    }
+    ul {
+      display: inline-flex;
+      width: 100%;
+      @include breakpoint() {
+        padding: 2vw 0;
+      }
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 3vw;
+        border-right: 1px solid $base_light_gray;
+        &:last-of-type {
+          border-right: none;
+        }
+      }
+      svg {
+        width: auto;
+        height: min(1vw, 14px);
+        @include breakpoint() {
+          height: min(1.8vw, 14px);
+        }
+      }
+      img {
+        height: 2.2vw;
+        margin: 0.5vw 0 0;
+        @include breakpoint() {
+          height: 3.4vw;
+          margin: 1.3vw 0 0;
+        }
+      }
+    }
+  }
+  .woman-img {
+    position: absolute;
+    right: 7.1vw;
+    bottom: 7.6vw;
+    width: 19vw;
+    @include breakpoint() {
+      top: -5.5vw;
+      right: unset;
+      bottom: unset;
+      left: -33.7vw;
+      width: 35.4vw;
+    }
+  }
+}
+
+// CTA 共通
+.tel-imgs {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: auto;
+  pointer-events: none;
+  @include breakpoint() {
+    pointer-events: auto;
+    width: calc(73vw - 4px);
+    padding: 2.5vw 17vw 2.6vw 3.4vw;
+    margin: 3.2vw 3.3vw 0;
+    background-color: $base_yellow;
+    border: 2px solid $base_royal_blue;
+    border-radius: 10px;
+    box-shadow: 0 0.8vw 0 0 #00000040;
+  }
+  .icon {
+    width: 9.8vw;
+    margin: 0 2.6vw 0 0;
+    @include breakpoint() {
+      width: 11.8vw;
+      margin: 0 1.7vw 0 0;
+    }
+  }
+
+  .number {
+    width: 48.6vw;
+    @include breakpoint() {
+      width: 59.2vw;
+    }
+  }
+  .call-ballon {
+    position: absolute;
+    top: -2.2vw;
+    right: -2.2vw;
+    z-index: 0;
+    align-items: center;
+    justify-content: center;
+    width: 16vw;
+    height: 16vw;
+    font-size: 2.5vw;
+    color: $base_yellow;
+    text-align: center;
+    background-color: $base_royal_blue;
+    border-radius: 100px;
+    @include breakpoint() {
+      display: flex;
+    }
+    .emphasis {
+      font-size: 1.3em;
+    }
+    &::before {
+      position: absolute;
+      bottom: 1.5vw;
+      left: -2vw;
+      z-index: -1;
+      width: 0;
+      height: 0;
+      content: "";
+      border-top: 12px solid transparent;
+      border-right: 40px solid $base_royal_blue;
+      border-bottom: 12px solid transparent;
+      transform: rotate(-20deg);
+    }
+    p {
+      margin: 0 !important;
+      line-height: 1.2 !important;
+    }
+  }
+}
+
+.phone-number {
+  font-size: clamp(33px, calc(-0.195rem + 4.7vw), 63px);
+  color: #ef033b;
+  font-weight: bold;
+  position: relative;
+
+  @include breakpoint() {
+    font-size: clamp(7vw, calc(-0.096rem + 8.14vw), 61px);
+    margin: 10px 0 0 0;
+  }
+
+  span {
+    font-size: .7em;
+  }
+
+  &-text {
+    font-size: .27em;
+    position: absolute;
+    left: 5%;
+
+    @include breakpoint() {
+      font-size: clamp(0.625rem, calc(-0.003rem + 2.87vw), 1.375rem);
+      transform: scale(.9);
+      top: -20%;
+      left: 2%;
+    }
+  }
+
+  &.big {
+    font-size: clamp(3.125rem, calc(-0.637rem + 7.83vw), 5.625rem);
+
+    @media screen and (min-width: 1281px) {
+      font-size: clamp(5.625rem, calc(0.24rem + 6.73vw), 7.813rem);
+    }
+
+    @include breakpoint() {
+      font-size: clamp(28.5px, calc(-0.036rem + 7.89vw), 61px);
+      margin: 10px 0 0 0;
+    }
+
+    .phone-number-text {
+      @include breakpoint() {
+        top: -8%;
+      }
+    }
+  }
+
+  &-text, &-figure {
+    margin: 0 !important;
+  }
+}
