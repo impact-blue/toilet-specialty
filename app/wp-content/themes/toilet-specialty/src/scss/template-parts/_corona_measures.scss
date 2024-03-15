@@ -1,0 +1,121 @@
+.corona-measures {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin:  35px auto 35px;
+  @include breakpoint() {
+    max-width: 700px;
+    padding: 0;
+    margin: 29px 3.3vw 29px;
+  }
+  .inner {
+    position: relative;
+    padding: 1.5vw 7.1vw 1.7vw 1.2vw;
+    text-align: left !important;
+    background-color: $base_light_blue;
+    border: 2px solid #000;
+    @include breakpoint() {
+      padding: 4vw 3.3vw 4.8vw 4.8vw;
+    }
+  }
+  .header {
+    font-size: clamp(14px, 1.6vw, 23px);
+    font-weight: bold;
+    word-break: keep-all;
+    white-space: nowrap;
+    @include breakpoint() {
+      font-size: 3.7vw;
+    }
+  }
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    @include breakpoint() {
+      display: block;
+      text-align: center;
+    }
+    .header {
+      margin: 0 1.7vw 0 0;
+      @include breakpoint() {
+        font-size: 4.4vw;
+      }
+    }
+    .description {
+      position: relative;
+      width: 100%;
+      padding: 0.7vw 0.9vw;
+      font-size: clamp(12px, 1.1vw, 16px);
+      @include breakpoint() {
+        display: block;
+        margin: 3vw 0 0;
+        font-size: clamp(12px, 3vw, 24px);
+        line-height: 1.5;
+      }
+      &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        content: "";
+        background-image: linear-gradient(to right, #000, #000 1px, transparent 1px, transparent 5px),
+          linear-gradient(to right, #000, #000 1px, transparent 1px, transparent 5px);
+        background-repeat: repeat-x, repeat-x;
+        background-position: left top, left bottom;
+        background-size: 5px 1px, 5px 1px;
+      }
+    }
+  }
+  .measures-list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 1.7vw 0 0;
+    @include breakpoint() {
+      flex-direction: column;
+      margin: 0;
+    }
+    li {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      @include breakpoint() {
+        display: inline-flex;
+        flex-wrap: wrap;
+        margin: 2.8vw 0 0;
+      }
+    }
+    img {
+      width: 5.3vw;
+      margin: 0 auto auto;
+      object-fit: contain;
+      @include breakpoint() {
+        width: 9.8vw;
+        margin: 0 2vw 0 0;
+      }
+    }
+    .text {
+      margin: 0.7vw 1vw 0;
+      font-size: max(12px, 1.1vw);
+      @include breakpoint() {
+        display: inline;
+        margin: auto 0;
+      }
+    }
+    p {
+      margin: 0.7vw 0 0;
+      line-height: 20px;
+      @include breakpoint() {
+        margin: 2vw 0 0;
+        font-size: clamp(12px, 3.2vw, 24px);
+        line-height: 1.5;
+      }
+    }
+  }
+  .worker {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: min(7.1vw, 102px);
+  }
+}

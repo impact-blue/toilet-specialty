@@ -1,0 +1,203 @@
+// 料金システム
+.price-formula {
+  border: 2px solid $base_sky_blue;
+  border-radius: min(6px, 1.8vw);
+  padding: 20px;
+  @include breakpoint() {
+    padding: 3vw;
+  }
+  .price-formula-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include breakpoint() {
+      background-color: $base_light_blue;
+      justify-content: center;
+      border-radius: min(6px, 1.8vw);
+      padding: 3vw;
+    }
+    .left {
+      &.is-pc {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-grow: 1;
+        @include breakpoint() {
+          display: none;
+        }
+      }
+      &.is-sp {
+        color: $base_blue;
+        border-radius: min(6px, 1.8vw);
+        line-height: 1.6;
+        font-size: 3.2vw;
+      }
+      .left-item {
+        font-size: min(20px, 2vw);
+        display: inline-block;
+        background-color: $base_light_blue;
+        color: $base_blue;
+        padding: 8px 4px;
+        border-radius: 6px;
+        position: relative;
+      }
+    }
+    .right {
+      color: $base_carmine;
+      font-size: min(3vw, 22px);
+      margin-left: 0.7%;
+      @include breakpoint() {
+        font-size: 3.9vw;
+      }
+      &::before {
+        display: inline-block;
+        content: "⇒";
+      }
+    }
+  }
+  .price-formula-body {
+    margin-top: min(20px, 3vw);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include breakpoint() {
+      background-color: $base_blue;
+      padding: 3vw;
+      border-radius: min(6px, 1.8vw);
+    }
+    .price-formula-block {
+      font-size: 20px;
+      width: 14%;
+      text-align: center;
+      border-radius: min(6px, 1.8vw);
+      background-color: $base_blue;
+      color: #fff;
+      width: 20%;
+      @include breakpoint() {
+        width: auto;
+      }
+      &.two-column {
+        font-size: min(15px, 3.2vw);
+        padding: 8px 0;
+        @include breakpoint() {
+          padding: 0;
+        }
+        .name {
+          font-size: .8em;
+          display: block;
+        }
+        .price-wrapper {
+          display: block;
+          margin-top: min(8px, 1vw);
+          .number {
+            font-size: 1.2em;
+            font-weight: bold;
+          }
+        }
+      }
+      &.one-column {
+        padding: 17px 0;
+        font-weight: bold;
+        font-size: min(3.2vw, 20px);
+        @include breakpoint() {
+          padding: 0;
+        }
+      }
+    }
+    .price-formula-block-discount {
+      text-align: center;
+      width: 16%;
+      background-color: $base_yellow;
+      color: $base_blue;
+      @include breakpoint() {
+        width: auto;
+        &.two-column {
+          padding: .8vw;
+        }
+      }
+    }
+    .mark {
+      color: $base_blue;
+      font-size: min(28px, 3vw);
+      @include breakpoint() {
+        color: #fff;
+      }
+    }
+  }
+}
+
+// 料金表
+.price-table-header {
+  width: 100%;
+  h2 {
+    @include h2_style();
+  }
+}
+
+.price-table-list {
+  .price-table {
+    width: 100%;
+    background: #fff;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+    @include breakpoint() {
+      font-size: 12px;
+    }
+    th, td {
+      border: solid 2px $base_sky_blue;
+      padding: 10px;
+      vertical-align: middle;
+    }
+    th {
+      background-color: $base_light_blue;
+      font-size: 1.1em;
+    }
+    td {
+      &:first-child {
+        text-align: left;
+        width: 42%;
+      }
+      &:nth-child(2) {
+        width: 28%;
+      }
+      &:last-child {
+        text-align: right;
+        width: 30%;
+      }
+    }
+  }
+}
+
+.post-content .price-formula {
+  margin-top: 30px;
+  p {
+    margin: 0;
+    line-height: 1;
+  }
+  @include breakpoint() {
+    padding: 1.6vw;
+    .price-formula-options {
+      padding: 1.6vw;
+      .left.is-sp {
+        font-size: 3vw;
+      }
+      .right.is-sp {
+        font-size: 3.5vw;
+      }
+    }
+    .price-formula-body {
+      padding: 1.6vw;
+      margin-top: 1.6vw;
+      .price-formula-block {
+        &.one-column {
+          font-size: min(3vw, 20px);
+        }
+        &.two-column {
+          font-size: min(3vw, 15px);
+        }
+      }
+    }
+  }
+}

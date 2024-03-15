@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/*
+Theme Name: トイレつまり専門サイトのテーマ
+Author: インパクトブルー
+Description: トイレつまり専門サイトのWordPressテーマ
+Version: 1.0
+*/
+
+@font-face {
+  font-family: "源柔ゴシック,Bold";
+  src: url("./fonts/GenJyuuGothic-Bold.woff") format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("./fonts/Oswald-Bold.woff") format('woff');
+  font-weight: 700;
+  font-display: swap;
+}

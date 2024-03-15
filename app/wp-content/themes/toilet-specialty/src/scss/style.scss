@@ -1,0 +1,34 @@
+// 変数
+@import "variables";
+@import "mixin";
+@import "common";
+
+// 共通部
+@import "header";
+@import "footer";
+
+// テンプレートパーツ
+@import "template-parts/cta";
+@import "template-parts/corona_measures";
+@import "template-parts/caution";
+@import "template-parts/crown";
+@import "template-parts/service";
+@import "template-parts/reason_of_choose";
+@import "template-parts/service_flow";
+@import "template-parts/zip_code";
+@import "template-parts/discount_banner";
+@import "template-parts/price_list";
+@import "template-parts/price_list_with_img";
+
+// 各ページ
+@import "front_page";
+@import "contact";
+@import "archive";
+@import "customer_voice";
+@import "detail";
+@import "questions";
+@import "page";
+@import "price";
+
+// エリア詳細：施工事例のスライダー
+@import "silder";

@@ -1,0 +1,337 @@
+.zip-code-search-cmn {
+  margin: 0;
+  @include breakpoint() {
+    margin: 0;
+  }
+  .inner {
+    max-width: 750px;
+    padding: 0 125px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: $base_light_blue;
+    border-radius: 10px;
+    @include breakpoint() {
+      width: auto;
+      max-width: 700px;
+      padding: 0;
+      border-radius: 0;
+    }
+    .zip-code-header {
+      font-family: "Hiragino Sans";
+      font-size: 20px;
+      line-height: 43px;
+      color: $base_royal_blue;
+      text-align: center;
+      @include breakpoint() {
+        font-size: clamp(12px, 2.9vw, 22px);
+        line-height: clamp(12px, 2.9vw, 22px);
+      }
+    }
+    .search-form {
+      display: flex;
+      justify-content: center;
+      max-width: 750px;
+      height: 60px;
+      margin: 30px auto 0;
+      overflow: hidden;
+      border: 1px solid #3c7dcd;
+      border-radius: 5px;
+      @include breakpoint() {
+        flex-direction: row;
+        max-width: 700px;
+        height: auto;
+        margin: 6vw auto 0;
+        border: 1px solid #3c7dcd;
+      }
+      .zip-code {
+        width: 100%;
+        padding: 0 30px;
+        font-family: "Hiragino Sans";
+        font-size: 16px;
+        line-height: 27px;
+        border: none;
+        @include breakpoint() {
+          height: auto;
+          font-size: clamp(10px, 2.9vw, 22px);
+        }
+        &:focus {
+          outline: 0;
+        }
+      }
+      input {
+        @include breakpoint() {
+          padding: 0 4vw;
+        }
+      }
+      .search-btn {
+        width: 175px;
+        min-width: 200px;
+        font-family: "Hiragino Sans";
+        font-size: 18px;
+        line-height: 31px;
+        color: white;
+        cursor: pointer;
+        background-color: $base_dark_blue;
+        border: none;
+        @include breakpoint() {
+          width: auto;
+          min-width: unset;
+          height: auto;
+          padding: 2.6vw;
+          font-size: clamp(12px, 3.2vw, 24px);
+          white-space: nowrap;
+        }
+      }
+    }
+    .description {
+      display: inline-block;
+      width: 100%;
+      margin: 20px 0 0 0;
+      font-family: "Hiragino Sans";
+      font-size: 14px;
+      line-height: 27px;
+      color: #878787;
+      text-align: left;
+      @include breakpoint() {
+        margin: 10px 0 0;
+        font-size: clamp(12px, 2.9vw, 22px);
+        line-height: clamp(12px, 2.9vw, 22px);
+      }
+    }
+  }
+
+  .result {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    .popup-window {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      box-sizing: border-box;
+      width: calc(100% - 34px);
+      max-width: 900px;
+      padding: 60px 100px;
+      background-color: #f4f8ff;
+      border: 3px solid #3c7dcd;
+      border-radius: 10px;
+      transform: translate(-50%, -50%);
+      @include breakpoint() {
+        padding: 30px 13px;
+      }
+      .upper-box {
+        margin: 17px auto 0;
+        @include breakpoint() {
+          margin: 15px auto 0;
+        }
+        .searched-zip-code {
+          position: relative;
+          width: calc(100% / 3 * 2);
+          height: 60px;
+          margin: 0 auto;
+          background-color: white;
+          border: 1px solid #3c7dcd;
+          border-radius: 10px;
+          @include breakpoint() {
+            width: 100%;
+            max-width: 390px;
+            height: 40px;
+          }
+          img {
+            position: absolute;
+            left: 20px;
+            width: 35px;
+            height: 100%;
+            object-fit: contain;
+            @include breakpoint() {
+              left: 12px;
+              width: 24px;
+            }
+          }
+          .zip-code {
+            display: inline-block;
+            font-family: "Hiragino Sans";
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 60px;
+            color: $base_dark_blue;
+            @include breakpoint() {
+              font-size: 20px;
+              line-height: 40px;
+            }
+          }
+        }
+        .address {
+          margin: 21px 0 0;
+          font-family: "Hiragino Sans";
+          font-size: 18px;
+          line-height: 18px;
+          @include breakpoint() {
+            font-size: 14px;
+            line-height: 20px;
+          }
+          .result-zip-code,
+          .result-area {
+            margin: 0 16px 0 0;
+            @include breakpoint() {
+              margin: 0;
+            }
+          }
+          .result-zip-code,
+          .result-area,
+          .result-handle {
+            display: inline;
+            @include breakpoint() {
+              display: block;
+            }
+          }
+          .result-handle {
+            font-weight: bold;
+            color: #147ed3;
+            @include breakpoint() {
+              margin: 10px 0 0 0;
+              font-size: 150%;
+            }
+            &.out-range {
+              color: red;
+            }
+          }
+        }
+        .error {
+          display: none;
+          margin: 22px 0 0 0;
+          font-family: "Hiragino Sans";
+          font-size: 18px;
+          line-height: 18px;
+          color: #e50112;
+          @include breakpoint() {
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+      }
+      .lower-box {
+        padding: 40px 0 0 0;
+        margin: 50px 0 0 0;
+        font-family: "Hiragino Sans";
+        font-size: 30px;
+        line-height: 50px;
+        border-top: 2px solid #a8a8a8;
+        @include breakpoint() {
+          padding: 26.5px 0 0 0;
+          margin: 21px 0 0 0;
+          font-size: 14px;
+          line-height: 24.6px;
+          border-top-width: 1px;
+        }
+        .accent {
+          color: #0b7ed3;
+          .num {
+            font-size: 40px;
+            @include breakpoint() {
+              font-size: 20px;
+            }
+          }
+        }
+        .cta-tel {
+          margin: 20px 0 0 0;
+          font-size: 20px;
+          line-height: 30px;
+          color: #147ed3;
+          img {
+            width: auto;
+            height: 25px;
+            margin: 0 5px;
+            vertical-align: bottom;
+            object-fit: contain;
+          }
+        }
+        .tel-annotation {
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 1.4;
+          margin: 10px 0 0;
+          @include breakpoint() {
+            margin: 4px 0 0;
+            font-size: 14px;
+          }
+        }
+        .cta-btn {
+          position: relative;
+          max-width: 392px;
+          margin: 30px auto 0;
+          font-family: "源柔ゴシック,Bold";
+          font-size: 20px;
+          line-height: 30px;
+          color: white;
+          border-radius: 10px;
+          @include breakpoint() {
+            margin: 20px auto 0;
+            font-size: 15px;
+            line-height: 21px;
+          }
+          a {
+            display: block;
+            padding: 14px 0;
+            background-image: url("../img/zip-code-search-btn.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            @include breakpoint() {
+              padding: 11.5px 0;
+            }
+          }
+          .min-text {
+            font-size: 14px;
+            line-height: 14px;
+            @include breakpoint() {
+              font-size: 12px;
+              line-height: 12px;
+            }
+          }
+        }
+      }
+    }
+    .close-btn {
+      position: absolute;
+      top: 18.5px;
+      right: 23.4px;
+      display: block;
+      width: 41px;
+      height: 41px;
+      cursor: pointer;
+      @include breakpoint() {
+        top: 8.4px;
+        right: 9px;
+        width: 20.4px;
+        height: 20.4px;
+      }
+      &::before,
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        content: "";
+        background-color: #147ed3;
+        transform: rotate(45deg);
+        @include breakpoint() {
+          height: 2px;
+        }
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .pref-list {
+    display: none;
+  }
+}

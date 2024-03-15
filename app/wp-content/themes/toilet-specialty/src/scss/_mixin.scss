@@ -1,0 +1,805 @@
+// トップ・記事詳細共通で使用するスタイル
+
+// 水面の背景付き見出し
+@mixin bg_water_surface() {
+  position: relative;
+  left: calc(-50vw + 50%);
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  width: 100vw;
+  height: 9vw;
+  padding: 0 15px;
+  margin: 0;
+  font-size: clamp(24px, 2.7vw, 38px);
+  line-height: 1.2;
+  color: $base_royal_blue;
+  background-color: transparent;
+  background-image: url(../img/bg-water-surface.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include breakpoint() {
+    height: 151px;
+    font-size: clamp(24px, 6.4vw, 48px);
+    background-position-x: 78%;
+    background-size: auto;
+    position: relative;
+    z-index: 100;
+    text-align: center;
+  }
+
+  br {
+    display: none;
+
+    @include breakpoint() {
+      display: block;
+    }
+  }
+
+  &._area {
+    background: none;
+    height: inherit;
+    padding: 0;
+    bottom: -105px;
+    margin: -70px 0 30px 0;
+
+    @include breakpoint() {
+      padding: 0;
+      margin: 15px 0 0 0;
+      bottom: 0;
+    }
+  }
+
+  &._ranking {
+    background: none;
+    height: inherit;
+    padding: 0;
+    margin-bottom: 80px;
+
+    @include breakpoint() {
+      padding: 0;
+      margin-bottom: 70px;
+      bottom: 0;
+    }
+  }
+}
+
+@mixin h2_style() {
+  padding: 20px;
+  margin: 40px 0 0;
+  font-size: 20px;
+  color: #fff;
+  text-align: left;
+  background-color: #1db1db;
+  border-radius: 10px;
+  @include breakpoint() {
+    padding: 24px 13px 22px;
+    margin: 20px 0 0;
+    font-size: 16px;
+    line-height: 160%;
+  }
+}
+
+// トラブルは絶対にありえません
+@mixin no_trouble_style() {
+  position: relative;
+  padding: 30px 0 0;
+  margin: 0 0 -8px;
+  color: #fff;
+  background: $base_dark_blue;
+
+  @include breakpoint(tablet) {
+    padding: 51px 0 0;
+  }
+
+  .container {
+    max-width: 1000px;
+  }
+
+  .heading {
+    display: flex;
+    align-items: flex-start;
+
+    @include breakpoint() {
+      margin: 0 0 -4px;
+    }
+
+    // 男性の画像
+    .left {
+      &.man-img {
+        z-index: 10;
+        max-width: 309px;
+        margin: 0 0 -150px 28px;
+
+        @include breakpoint() {
+          max-width: 33vw;
+          margin: 0 0 0 4px;
+        }
+      }
+    }
+
+    // トラブルは絶対にありえません！！
+    .right {
+      .no-trouble-img {
+        margin: 79px 0 21px;
+
+        @include breakpoint() {
+          max-width: 57vw;
+          margin: 0 0 21px;
+        }
+      }
+      .text {
+        margin: 0 0 0 26px;
+        font-size: 20px;
+        line-height: 1.7;
+
+        @include breakpoint() {
+          margin: 0 0 29px 16px;
+          font-size: 3.7vw;
+        }
+      }
+    }
+  }
+
+  // お近くのエリア担当者からのメッセージ
+  .text-area {
+    position: relative;
+
+    @include breakpoint() {
+      margin: 0 10px;
+    }
+
+    .text-box {
+      position: relative;
+      z-index: 100;
+      padding: 50px 0;
+      background: url("../img/suidou-route-about-2.jpg");
+      background-size: 500px 500px;
+      border: 1px solid #fff;
+
+      @include breakpoint() {
+        padding: 35px 0 52px;
+      }
+
+      .text-container {
+        padding: 0 29px 0 26px;
+
+        @include breakpoint() {
+          padding: 0 9px 0 22px;
+        }
+
+        .sub-heading {
+          margin: 0 0 20px;
+          line-height: 1.8;
+          letter-spacing: 1.6;
+        }
+
+        // 見出し
+        .heading {
+          padding: 0 0 20px;
+          font-size: 30px;
+          line-height: 1.3;
+          letter-spacing: 3;
+          border-bottom: 1px solid #fff;
+
+          @include breakpoint() {
+            padding: 25px 0 20px;
+            font-size: 16px;
+            line-height: 1.8;
+          }
+        }
+
+        p {
+          padding: 20px 0 0;
+          font-size: 14px;
+          line-height: 2.1;
+
+          @include breakpoint() {
+            padding: 23px 9px 0;
+          }
+        }
+      }
+    }
+
+    // 背景の泡
+    .bubble {
+      &.bubble-top {
+        top: -100px;
+        right: calc(37% - 584px);
+        max-width: 275px;
+      }
+      &.bubble-bottom {
+        bottom: -82px;
+        left: calc(44% - 520px);
+        z-index: 99;
+        max-width: 146px;
+      }
+    }
+  }
+}
+
+// 対応メーカー部分のスタイル
+@mixin makers_style() {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @include breakpoint(tablet) {
+    justify-content: center;
+  }
+
+  img {
+    max-width: 208px;
+
+    @include breakpoint() {
+      max-width: 96px;
+      padding: 3px;
+    }
+  }
+}
+
+// トラブルゼロを目指す
+@mixin trouble_zero_style() {
+  padding: 40px 0 0;
+  text-align: center;
+  background: url("../img/graph-paper-bg.jpeg");
+  background-size: cover;
+
+  @include breakpoint() {
+    padding: 65px 0 0;
+  }
+
+  h2 {
+    @include h2_style();
+  }
+
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 0 83px;
+
+    @include breakpoint(tablet) {
+      justify-content: center;
+    }
+
+    @include breakpoint() {
+      justify-content: space-around;
+      margin: 10px auto 0;
+    }
+
+    .item {
+      margin: 20px 0 0;
+
+      img {
+        max-width: 280px;
+
+        @include breakpoint() {
+          max-width: 159px;
+        }
+      }
+
+      p {
+        font-size: 25px;
+        font-weight: bold;
+        line-height: 1.7;
+        color: $base_dark_blue;
+
+        @include breakpoint() {
+          font-size: 12px;
+        }
+
+        .big-text {
+          display: inline-block;
+          margin: -13px 0 0;
+          font-size: 35px;
+
+          @include breakpoint() {
+            font-size: 19px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// トップ
+// トップの三角の背景を生成するベースになるスタイル
+@mixin triangle_bg_base_style() {
+  position: absolute;
+  width: 0;
+  height: 0;
+  content: "";
+  border-style: solid;
+}
+
+// 擬似要素で生成する円
+@mixin circle_icon($top, $right, $width, $height) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  width: $width;
+  height: $height;
+  content: "";
+  background: #fff;
+  border-radius: 15px;
+}
+
+// 擬似要素で生成する三角形
+@mixin triangle_icon($bottom, $right, $color) {
+  position: absolute;
+  right: $right;
+  bottom: $bottom;
+  width: 0;
+  height: 0;
+  content: "";
+  border-color: transparent transparent transparent $color;
+  border-style: solid;
+}
+
+// トップページのアイテム一覧
+@mixin item_list_style() {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include breakpoint(tablet) {
+    justify-content: center;
+  }
+
+  @include breakpoint() {
+    display: block;
+  }
+
+  .item {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px 0;
+    background: #fff;
+    border: 2px solid $base_dark_blue;
+
+    @include breakpoint(tablet) {
+      margin: 10px;
+    }
+
+    @include breakpoint() {
+      margin: 20px auto;
+    }
+
+    .item-img {
+      width: 100%;
+      height: 157px;
+      font-family: "object-fit: cover;";
+      object-fit: cover;
+    }
+
+    .item-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      height: 200px;
+      padding: 8px 25px 18px 25px;
+      font-weight: bold;
+      color: $base_dark_blue;
+      &.useful-info {
+        height: 270px;
+      }
+      h3 {
+        font-size: 22px;
+        line-height: 1.7;
+        text-align: left;
+        border-bottom: 1px solid $base_dark_blue;
+      }
+      .text {
+        padding: 12px 0;
+        font-size: 13px;
+        line-height: 1.6;
+        text-align: left;
+      }
+      a {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        max-width: 250px;
+        padding: 9px 0 8px;
+        font-size: 12px;
+        line-height: 1.5;
+        color: #fff;
+        text-align: center;
+        letter-spacing: 0.6px;
+        background: url("../img/btn-bg.png");
+        &::before {
+          @include circle_icon(calc(50% - 8px), 20px, 16px, 16px);
+        }
+        &::after {
+          @include triangle_icon(13px, 24px, $base_dark_blue);
+          border-width: 4px 0 4px 7px;
+        }
+      }
+    }
+  }
+}
+
+// お客様の声
+// アイテム詳細ページでも表示するので関数化する
+
+
+// ページネーションのスタイル
+@mixin paginate_style() {
+  margin: 60px 0 160px;
+  text-align: center;
+
+  @include breakpoint() {
+    margin: 30px 0 86px;
+  }
+
+  .prev,
+  .next {
+    font-size: 14px !important;
+    font-weight: normal !important;
+    color: #000 !important;
+
+    @include breakpoint() {
+      font-size: 12px !important;
+    }
+  }
+
+  .prev {
+    &.page-numbers {
+      margin: 0 80px 0 0;
+
+      @include breakpoint() {
+        margin: 0;
+      }
+    }
+  }
+
+  .next {
+    &.page-numbers {
+      margin: 0 0 0 90px;
+
+      @include breakpoint() {
+        margin: 0;
+      }
+    }
+  }
+
+  .page-numbers {
+    margin: 0 8px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #bcbcbc;
+
+    @include breakpoint() {
+      margin: 0 3px;
+      font-size: 12px;
+    }
+
+    &.current {
+      position: relative;
+      color: $base_dark_blue;
+      &::before {
+        position: absolute;
+        bottom: -5px;
+        left: -3px;
+        width: 150%;
+        height: 1px;
+        content: "";
+        background: $base_dark_blue;
+      }
+    }
+  }
+}
+
+// フォームのラベルの関数
+@mixin form_label($bg_color) {
+  max-height: 18px;
+  padding: 3px 4px 4px;
+  margin: 0 0 0 5px;
+  font-size: 11px;
+  color: #fff;
+  background: $bg_color;
+  border-radius: 5px;
+}
+
+// フォームのinputとtextareaのスタイル
+@mixin input_and_textarea_base_style() {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 571px;
+  padding: 16px 0 16px 17px;
+  font-size: 16px;
+  border: 1px solid #bebebe;
+}
+
+// フォーム下部のボタン
+@mixin form_submit_btn($bg_color, $width) {
+  width: $width;
+  max-width: $width;
+  font-weight: bold;
+  line-height: 1.7;
+  cursor: pointer;
+  background: $bg_color;
+  border: none;
+  border-radius: 5px;
+}
+
+// よくある質問ページ
+// Q&Aのアイコンの部分
+@mixin question_icon($color) {
+  display: inline-block;
+  padding: 0 16px 0 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: $color;
+}
+
+// 申込の流れのショートコード
+@mixin service_flow() {
+  .free-service-wrapper {
+    padding: 3.5vw 0 0;
+    background-color: #87c9ff;
+    border: 2px solid $base_sky_blue;
+    @include breakpoint() {
+      padding: 6.6vw 0 0;
+    }
+
+    .item:first-of-type {
+      .content-right {
+        margin: 140px 0 0;
+
+        @include breakpoint() {
+          margin: 83px 0 0;
+        }
+      }
+    }
+  }
+
+  .free-service-header {
+    padding: 0 15px;
+    margin: 0 auto;
+    font-family: "源柔ゴシック,Bold";
+    font-size: min(34px, 2.4vw);
+    text-align: center;
+    @include breakpoint() {
+      font-size: max(20px, 3.7vw);
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 50px;
+    margin: 3.5vw 0 0 0;
+
+    @include breakpoint() {
+      display: block;
+      padding: 0 6.6vw;
+      margin: 6.6vw auto 0;
+    }
+  }
+
+  .item {
+    position: relative;
+    width: 100%;
+    margin: 0 0 50px;
+    list-style: none;
+    border: 3px solid $base_dark_blue;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px $base_gray;
+
+    .item-background {
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      z-index: 0;
+      width: calc(100% + 6px);
+      height: 160px;
+      background-image: url("../img/service-flow-background-pc.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      -webkit-background-clip: padding-box;
+      background-clip: padding-box;
+      background-size: auto 160px;
+      border-radius: 10px;
+
+      @media (max-width: 594px) {
+        height: 106px;
+        background-size: auto 100px;
+      }
+    }
+
+    .title-wrapper {
+      position: relative;
+      display: flex;
+      width: 100%;
+      padding: 0 50px;
+
+      @include breakpoint() {
+        padding: 0 10px;
+      }
+
+      .water-drop {
+        position: absolute;
+        top: -18px;
+        left: 40px;
+        width: 81px;
+        height: 111px;
+
+        @include breakpoint() {
+          top: -17px;
+          left: 10px;
+          width: 61px;
+          height: 85px;
+        }
+
+        .flow-number {
+          position: absolute;
+          z-index: 1;
+          margin: 31px 10px 9px;
+          font-family: "源柔ゴシック,Bold";
+          font-size: 50px;
+          font-weight: bold;
+          line-height: 74px;
+          color: white;
+
+          @include breakpoint() {
+            margin: 24px 7px 8px;
+            font-size: 38px;
+            line-height: 53px;
+          }
+        }
+
+        .water-drop-icon {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .title {
+        position: absolute;
+        height: 52px;
+        padding: 0 94px 0 0;
+        margin: 26px 0 0 94px;
+        font-family: "源柔ゴシック,Bold";
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 51px;
+        color: white;
+        text-align: left;
+
+        span {
+          display: flex;
+          align-items: center;
+          height: 100%;
+        }
+
+        @include breakpoint() {
+          padding: 0 18px 0 0;
+          margin: 9px 0 0 67px;
+          font-size: max(3.3vw, 16px);
+          line-height: 27px;
+        }
+      }
+    }
+
+    .content-wrapper {
+      display: flex;
+      padding: 0 40px 40px 51px;
+      background-color: #fff;
+      border-radius: 7px;
+
+      @include breakpoint() {
+        flex-direction: column;
+        padding: 0 23px 36px 23px;
+      }
+
+      .content-left {
+        order: 0;
+        margin: 148px 0 0 0;
+        text-align: left;
+        @include breakpoint() {
+          order: 1;
+          margin: 16px 0 0 0;
+        }
+
+        .header {
+          position: relative;
+          padding: 0 0 0 22px;
+          margin: 0 21px 0 0;
+          font-family: "源柔ゴシック,Bold";
+          font-size: 20px;
+          font-weight: bold;
+          line-height: 30px;
+          color: #0b7ed3;
+
+          @include breakpoint() {
+            margin: 0;
+            font-size: 18px;
+            line-height: 27px;
+          }
+
+          &::before {
+            position: absolute;
+            left: 0px;
+            width: 10px;
+            height: 100%;
+            content: "";
+            background-color: #0b7ed3;
+          }
+        }
+        .content {
+          margin: 25px 53px 0 0;
+          font-family: "Hiragino Sans";
+          font-size: 14px;
+          line-height: 20px;
+          color: $base_dark_blue;
+
+          @include breakpoint() {
+            margin: 20px 0 0 0;
+            font-size: 12px;
+          }
+
+          p {
+            margin: 1em 0 0;
+          }
+
+          ul {
+            padding: 0;
+            margin: 1em 0 0;
+            li {
+              margin: 0;
+              font-weight: normal;
+              line-height: 2.1;
+              &::before {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      .content-right {
+        z-index: 2;
+        order: 1;
+        width: 340px;
+        height: 340px;
+        margin: 70px 0 0;
+        @include breakpoint() {
+          order: 0;
+          width: 100%;
+          height: 42.857vw;
+          margin: 83px 0 0;
+        }
+
+        img {
+          min-width: 340px;
+          height: 100%;
+          border: 1px solid $base_dark_blue;
+          border-radius: 50%;
+          object-fit: cover;
+
+          @include breakpoint() {
+            min-width: 100%;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ブレイクポイント設定
+@mixin breakpoint($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

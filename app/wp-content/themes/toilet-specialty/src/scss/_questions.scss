@@ -1,0 +1,277 @@
+#questions {
+  .contents {
+    position: relative;
+    z-index: 100;
+    transform: translateY(-98px);
+  }
+
+  .container {
+    max-width: 1000px;
+  }
+
+  // タイトルと背景
+  .heading {
+    position: relative;
+    padding: 64px 0 80px;
+    background: $base_light_blue;
+    @include breakpoint() {
+      padding: 32px 0 56px;
+    }
+    &::before {
+      position: absolute;
+      bottom: -539px;
+      width: 0;
+      height: 0;
+      content: "";
+      border-color: $base_light_blue transparent transparent transparent;
+      border-style: solid;
+      border-width: 539px 100vw 0 0;
+
+      @include breakpoint() {
+        display: none;
+      }
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      margin: -4px auto auto;
+      .question-mark-img {
+        max-width: 66px;
+
+        @include breakpoint() {
+          max-width: 41px;
+        }
+      }
+      h1,
+      h2 {
+        padding: 0;
+        margin: 0 0 0 23px;
+        font-size: 34px;
+        line-height: 1.7;
+        color: $base_dark_blue;
+        letter-spacing: 1.7px;
+        background: transparent;
+
+        @include breakpoint() {
+          margin: 0 0 0 14px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  // 見出しのナビ部分
+  .question-nav-heading {
+    display: flex;
+    align-items: center;
+    margin: 60px 0 81px;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+
+    @include breakpoint() {
+      margin: 60px 0 -11px;
+    }
+
+    .question-nav-item {
+      width: calc(100% / 3);
+      padding: 31px 37px;
+      font-weight: bold;
+      color: $base_dark_blue;
+      cursor: pointer;
+      background: #fff;
+      border-right: 1px solid #e0e0e0;
+      &:first-child {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+      &:last-child {
+        border-right: none;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+
+      @include breakpoint() {
+        padding: 10px 19px;
+        font-size: 12px;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  // よくある質問一覧
+  .question-list {
+    margin: 0 0 70px;
+
+    @include breakpoint() {
+      margin: 0 0 -57px;
+    }
+
+    .question-item {
+      margin: 40px 0;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+
+      .question-heading {
+        padding: 28px 50px 26px;
+        font-size: 20px;
+        color: #fff;
+        background: url(../img/suidou-route-about.jpg);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+        @include breakpoint() {
+          padding: 23px 19px 20px;
+          font-size: 18px;
+        }
+      }
+
+      .question-and-answer {
+        padding: 0 50px 27px;
+
+        @include breakpoint() {
+          padding: 0 20px 4px;
+        }
+
+        .item {
+          border-bottom: 1px solid #e0e0e0;
+          &:last-child {
+            border-bottom: none;
+          }
+
+          &:first-of-type > .answer-wrap {
+            display: block;
+          }
+
+          // Q&Aのアイコン
+          .icon {
+            &.q-icon {
+              @include question_icon(#1eb1db);
+            }
+            &.a-icon {
+              @include question_icon($base_red);
+            }
+          }
+
+          // 質問
+          .question {
+            position: relative;
+            display: flex;
+            padding: 33.5px 0 32.5px;
+            font-size: 20px;
+            font-weight: bold;
+            color: $base_dark_blue;
+            cursor: pointer;
+            p {
+              width: 88%;
+              margin: 0 60px 0 0;
+
+              @include breakpoint() {
+                width: 82%;
+              }
+            }
+
+            &::before {
+              @include circle_icon(calc(50% - 13px), 20px, 25px, 25px);
+              border: 2px solid $base_dark_blue;
+            }
+            &::after {
+              position: absolute;
+              top: calc(50% - 3px);
+              right: 29px;
+              width: 7px;
+              height: 7px;
+              content: "";
+              border-top: 4px solid $base_dark_blue;
+              border-right: 4px solid $base_dark_blue;
+              transition: all 0.4s;
+              transform: rotate(-46deg);
+            }
+
+            @include breakpoint() {
+              padding: 20px 0;
+              font-size: 16px;
+              line-height: 1.5;
+            }
+
+            &-bars {
+              position: absolute;
+              width: 25px;
+              height: 25px;
+              top: 50%;
+              right: 15px;
+              transform: translateY(-30%);
+              cursor: pointer;
+
+              @include breakpoint() {
+                top: 16px;
+                right: 1px;
+                cursor: auto;
+              }
+            }
+
+            &-bar {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background: #000000;
+
+              &._top {
+                width: 20px;
+                height: 3px;
+
+                @include breakpoint() {
+                  width: 14px;
+                  height: 2px;
+                }
+              }
+
+              &._low {
+                width: 3px;
+                height: 20px;
+                transition: all .3s ease 0s;
+
+                @include breakpoint() {
+                  width: 2px;
+                  height: 14px;
+                }
+
+                &._open {
+                  transform: translate(-50%, -50%) rotate(90deg);
+                }
+              }
+            }
+          }
+
+          // アコーディオンが開いているときに付与するクラス
+          .active {
+            &::after {
+              transform: rotate(134deg);
+            }
+          }
+
+          .answer-wrap {
+            display: none;
+          }
+
+          // 答え
+          .slide-item {
+            display: none;
+            padding: 0 0 41.5px;
+            .answer {
+              display: flex;
+              font-size: 14px;
+              p {
+                line-height: 2.1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

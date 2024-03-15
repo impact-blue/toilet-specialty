@@ -1,0 +1,981 @@
+#single-detail {
+  .item-title {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0 0;
+    margin: 0 0 63px;
+    font-size: 34px;
+    line-height: 1.5;
+    background: $base_dark_blue;
+    background-color: $base_light_blue;
+
+    img {
+      width: 260px;
+
+      @include breakpoint() {
+        max-width: 137px;
+      }
+    }
+
+    span {
+      max-width: 760px;
+      color: $base_dark_blue;
+
+      @include breakpoint() {
+        font-size: 20px;
+        line-height: 1.3;
+      }
+    }
+  }
+
+  // どこよりも低料金・トラブル0を目指す
+  .trouble-zero {
+    @include trouble_zero_style();
+  }
+
+  .cta:last-of-type {
+    margin: 0 0 -26px;
+  }
+
+    // よくある質問
+    #questions {
+      &.top-page-questions {
+        margin: 0;
+        @include breakpoint() {
+          margin: 0 0 55px;
+        }
+      }
+    }
+
+    .crown {
+      .text {
+        p {
+          margin: 1.5vw 0 0;
+          line-height: 1.6;
+          @include breakpoint() {
+            margin: 6.2vw 0 0;
+            line-height: 2.2;
+          }
+        }
+      }
+      .certificates {
+        p {
+          margin: 0;
+          line-height: 1.3;
+        }
+        img {
+          width: 111%;
+          max-width: unset;
+          @include breakpoint() {
+            width: 28.6vw;
+          }
+        }
+      }
+    }
+
+    .service {
+      .content {
+        margin: 0;
+        @include breakpoint() {
+          padding: 3.6vw 0 5.4vw;
+          margin: 0;
+        }
+      }
+      .small-header {
+        span {
+          font-size: 23px;
+          @include breakpoint() {
+            font-size: clamp(14px, 4vw, 23px);
+          }
+        }
+      }
+    }
+}
+
+  // 指定給水装置工事事業者指定番号
+  .admitted-number {
+    .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .number-txt {
+      font-size: 20px;
+      line-height: 1.4;
+      margin: 0;
+      @include breakpoint() {
+        text-align: center;
+      }
+      .big {
+        font-weight: bold;
+        font-size: 2.4em;
+      }
+    }
+    .annotation {
+      font-size: 14px;
+      margin-top: 20px;
+      line-height: 1.4;
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+  // modal-window
+  .modal-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    padding: 60px 10px;
+    text-align: center;
+    &:not(:target) {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+    &:target {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.4s, visibility 0.4s;
+    }
+    &::after {
+      display: inline-block;
+      height: 100%;
+      margin-left: -0.05em;
+      vertical-align: middle;
+      content: "";
+    }
+    .modal-window {
+      position: relative;
+      z-index: 20;
+      box-sizing: border-box;
+      display: inline-block;
+      width: 90vw;
+      max-width: 800px;
+      vertical-align: middle;
+      background: #fff;
+      border-radius: 10px;
+      border: 3px solid #3059A7;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    }
+    .title {
+      margin: 46px 0 0;
+      background-color: #3059A7;
+      color: #fff;
+      font-weight: bold;
+      font-size: 28px;
+      letter-spacing: .1em;
+      @media screen and (max-width: 400px) {
+        font-size: 24px;
+      }
+      .maker {
+        color: $base_yellow;
+      }
+    }
+    .scroll-area {
+      max-height: 56vh;
+      overflow-y: auto;
+      margin: 24px 0 12px;
+    }
+    .table {
+      margin: 6px auto 0;
+      max-width: 96%;
+      text-align: left;
+      line-height: 1.4;
+      @media screen and (max-width: 400px) {
+        font-size: 12px;
+      }
+      th, td {
+        border: 1px solid #000;
+        padding: min(1.7vw, 10px);
+      }
+    }
+    .list, .annotation {
+      padding: 0 20px;
+      font-size: 16px;
+    }
+    .annotation {
+      margin: 16px 0 22px;
+      line-height: 1.7;
+      @media screen and (max-width: 420px) {
+        font-size: 14px;
+      }
+    }
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+      color: #17388D;
+      margin: 0 auto;
+      max-width: 550px;
+      li {
+        align-items: flex-start;
+        font-weight: bold;
+        width: 50%;
+        margin: 10px 0;
+        line-height: 2.1;
+        text-align: left;
+        @media screen and (max-width: 400px) {
+          width: 100%;
+        }
+        &::before {
+          content: "■";
+          background: none;
+          min-width: unset;
+          width: auto; height: auto;
+          margin: 0 4px 0 0;
+        }
+      }
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .modal-close {
+      position: absolute;
+      top: 6px; right: 6px;
+      z-index: 20;
+      width: 35px;
+      font-size: 35px;
+      font-weight: lighter;
+      line-height: 35px;
+      color: #95979c;
+      &:hover {
+        color: #2b2e38;
+      }
+    }
+  }
+
+// 投稿部分のスタイル
+.post-content {
+  max-width: 900px;
+  padding: 0 0 30px;
+  margin: 0 auto;
+
+  @media screen and (min-width:770px) and (max-width: 922px) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  @include breakpoint() {
+    padding: 0 20px 0 19px;
+    margin: 0 auto 40px;
+  }
+
+  &.area-detail-city-block {
+    @include breakpoint() {
+      width: 96%;
+      padding: 0;
+    }
+  }
+
+  .bg-water-surface {
+    @include bg_water_surface();
+    margin: 0 0 30px;
+    @include breakpoint() {
+      display: inline-block;
+      height: auto;
+      padding: 110px 15px 0;
+      text-align: center;
+      position: relative;
+      z-index: 100;
+    }
+  }
+  h2 {
+    @include h2_style();
+  }
+
+  .content-innner{
+    margin-bottom: 50px;
+  }
+
+  h3 {
+    position: relative;
+    padding: 0 0 0 25px;
+    margin: 40px 0 0;
+    font-size: 20px;
+    line-height: 1.7;
+
+    @include breakpoint() {
+      padding: 0 0 0 14px;
+      margin: 20px 0 0;
+      font-size: 16px;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 5px;
+      height: 100%;
+      content: "";
+      background-image: linear-gradient(#487cff, #d5e1ff);
+    }
+  }
+  h4 {
+    display: inline-block;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 200%;
+      height: 1px;
+      background-color: #002ca3;
+      left: 0;
+      bottom: -5px;
+
+      @include breakpoint() {
+        max-width: 88vw;
+      }
+    }
+  }
+
+  h4 {
+    display: inline-block;
+    position: relative;
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 200%;
+      height: 1px;
+      background-color: #002ca3;
+      left: 0;
+      bottom: -5px;
+
+      @include breakpoint() {
+        max-width: 88vw;
+      }
+    }
+  }
+
+  p {
+    margin: 20px 0 0;
+    line-height: 1.5;
+
+    @include breakpoint() {
+      margin: 10px 0 0;
+    }
+  }
+
+  ul {
+    padding: 0 0 0 25px;
+    margin: 30px 0;
+
+    @include breakpoint() {
+      padding: 0;
+      margin: 24px 0 30px;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      margin: 10px 0 0;
+      font-weight: bold;
+      line-height: 155%;
+      color: #0a377b;
+
+      &::before {
+        display: inline-block;
+        width: 26px;
+        min-width: 26px;
+        height: 26px;
+        margin: 0 10px 0 0;
+        vertical-align: sub;
+        content: "";
+        background-image: url("../img/checkbox-new.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        @include breakpoint() {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  ol {
+    margin: 30px 0 30px 36px;
+
+    li {
+      list-style: decimal;
+    }
+  }
+
+  img {
+    width: initial;
+    max-width: 100%;
+
+    &.aligncenter {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .table1 {
+    text-align: left;
+    line-height: 1.7;
+    margin: 40px 0;
+    width: 100%;
+    @media screen and (max-width: 480px) {
+      border: 1px solid $base_light_blue;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 10px 30px;
+      @media screen and (max-width: 480px) {
+        display: block;
+        border: none;
+      }
+    }
+    th {
+      font-weight: normal;
+      background-color: $base_light_blue;
+      width: 34%;
+      @media screen and (max-width: 480px) {
+        width: auto;
+      }
+    }
+    thead th {
+      background-color: $base_royal_blue;
+      color: #fff;
+      text-align: center;
+    }
+  }
+
+  .blue-box {
+    padding: 32px 44px 0px 30px;
+    margin: 30px 0;
+    background: #f2f7ff;
+
+    @include breakpoint() {
+      padding: 32px 10px 0px 10px;
+    }
+
+    p {
+      padding: 0 0 30px;
+      margin: 0;
+    }
+  }
+
+  #toc_container {
+    max-width: 750px;
+    margin: 40px auto 0;
+    line-height: 1.6;
+    border-color: #ddd;
+    border-radius: 5px;
+
+    p.toc_title {
+      padding: 0 0 0 15px;
+      margin: 10px 0;
+      font-size: 17px;
+      font-weight: bold;
+      color: #002ca3;
+      text-align: left;
+    }
+
+    ul {
+      padding: 5px 5px 5px 15px;
+      margin: unset;
+
+      li {
+        display: inherit;
+        padding: 3px 0;
+        margin: unset;
+        font-size: unset;
+        font-weight: unset;
+        color: unset;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // トラブルは絶対にありえません
+  .no-trouble {
+    @include no_trouble_style();
+    padding: 30px 0 41px;
+    margin: 0 calc(50% - 50vw) 0 !important;
+    @include breakpoint(tablet) {
+      padding: 51px 0 41px;
+    }
+  }
+
+  // ボッタクリに注意
+  .bottakuri {
+    padding: 48px 0 0;
+    margin: 50px calc(50% - 50vw) 0;
+    background: $base_dark_blue;
+    @include breakpoint() {
+      padding: 48px 0 49px;
+    }
+
+    &::before {
+      content: none;
+    }
+  }
+
+  // 吹き出し
+  .balloon {
+    display: flex;
+    flex-wrap: nowrap;
+
+    .faceicon {
+      width: 93px;
+      min-width: 93px;
+
+      @include breakpoint() {
+        max-width: 61px;
+      }
+    }
+
+    .talk-box {
+      position: relative;
+      padding: 30px 18px;
+      margin: 0 0 0 50px;
+      font-size: 20px;
+      line-height: 1.7;
+      background-color: #e8fbff;
+      border-radius: 10px;
+
+      &::before {
+        position: absolute;
+        top: 28px;
+        left: -28px;
+        display: block;
+        content: "";
+        border-color: #e8fbff transparent transparent;
+        border-style: solid;
+        border-width: 17px 23px 0px 23px;
+        transform: rotate(-140deg);
+
+        @include breakpoint() {
+          top: 30px;
+          left: -16px;
+          transform: rotate(-156deg);
+        }
+      }
+
+      @include breakpoint() {
+        padding: 20px;
+        margin: 0 0 0 10px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .man-box {
+    p {
+      margin: 0;
+    }
+  }
+
+  // メーカー一覧
+  .makers {
+    margin: 30px 0 0;
+    @include makers_style();
+  }
+
+  // 申込の流れのショートコード
+  .service-flow {
+    @include service_flow();
+  }
+
+  // 料金画像のショートコード
+  .price {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 30px 0 0;
+
+    @include breakpoint() {
+      display: block;
+      max-width: 337px;
+      margin: 30px auto 0;
+    }
+
+    img {
+      width: 49%;
+
+      @include breakpoint() {
+        width: 100%;
+        max-width: 337px;
+      }
+    }
+  }
+
+  // お支払い方法のショートコード
+  #price {
+    text-align: left;
+
+    .contents {
+      .text {
+        margin: 0;
+        font-size: 16px;
+        line-height: 2.1;
+      }
+    }
+
+    .payment-method {
+      padding: 0;
+    }
+  }
+
+  // 工務店情報
+  .shop-info {
+    .shop-info-ttl {
+      position: relative;
+      .txt {
+        width: calc(100% - 60px);
+        display: block;
+        &::before {
+          @include circle_icon(calc(50% - 13px), 20px, 25px, 25px);
+          border: 2px solid $base_dark_blue;
+        }
+        &::after {
+          position: absolute;
+          top: calc(50% - 3px);
+          right: 29px;
+          width: 7px;
+          height: 7px;
+          content: "";
+          border-top: 4px solid $base_dark_blue;
+          border-right: 4px solid $base_dark_blue;
+          transition: all 0.4s;
+          transform: rotate(-46deg);
+        }
+      }
+      &.active .txt::after {
+        transform: rotate(134deg);
+      }
+    }
+    .shop-info-content {
+      display: none;
+      .shop-info-item {
+        .shop-info-name {
+          font-weight: bold;
+        }
+        .table1 {
+          tr th {
+            width: auto;
+          }
+        }
+        .shop-info-map {
+          iframe {
+            max-width: 100%;
+            @media screen and (max-width: 600px) {
+              height: 50vw;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 施工情報
+  .sekou-info {
+    color: #4A4A4A;
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        color: #4A4A4A;
+        font-weight: normal;
+        &::before {
+          display: none;
+        }
+      }
+    }
+    h2 {
+      padding: 0;
+    }
+    p {
+      margin: 0;
+    }
+    .sekou-info-ttl {
+      color: $base_blue;
+      background-color: #fff;
+      text-align: center;
+      font-size: 32px;
+      letter-spacing: .1em;
+      font-weight: bold;
+    }
+    .sekou-info-basic {
+      background-color: $sekou_light_gray;
+      padding: 20px 30px;
+      margin-top: 40px;
+      @include breakpoint() {
+        margin-top: 16px;
+      }
+      .sekou-info-basic-upper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        .sekou-info-basic-upper-item {
+          width: 50%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 10px;
+          @include breakpoint() {
+            width: 100%;
+          }
+          .ttl {
+            background-color: $sekou_gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20%;
+            padding: 4px 0;
+            border-radius: 4px;
+            @include breakpoint() {
+              width: min(100px, 22vw);
+            }
+          }
+          a.content {
+            color: $base_blue;
+            text-decoration: underline;
+          }
+        }
+      }
+      .sekou-info-desc {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid $sekou_gray;
+      }
+    }
+    .sekou-info-compare {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 40px;
+      @include breakpoint() {
+        display: block;
+      }
+      .sekou-info-compare-item {
+        width: 46%;
+        @include breakpoint() {
+          width: 100%;
+        }
+        .sekou-info-compare-ttl {
+          font-size: 20px;
+          padding: 8px;
+          text-align: center;
+          border-radius: 6px 6px 0 0;
+        }
+        .sekou-info-compare-img {
+          height: 300px;
+          width: 100%;
+          object-fit: cover;
+          @include breakpoint() {
+            height: auto;
+          }
+        }
+        .sekou-info-compare-info {
+          margin-top: 30px;
+          .sekou-info-compare-info-item {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+            .ttl {
+              width: 30%;
+              font-size: 16px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 4px 0;
+              border-radius: 6px;
+              @include breakpoint() {
+                width: min(150px, 31vw);
+              }
+            }
+          }
+        }
+        &.before {
+          .sekou-info-compare-ttl {
+            background-color: $sekou_gray;
+          }
+          .sekou-info-compare-info-item {
+            .ttl {
+              background-color: $sekou_gray;
+            }
+          }
+        }
+        &.after {
+          .sekou-info-compare-ttl {
+            background-color: $base_sky_blue;
+            color: #fff;
+          }
+          .sekou-info-compare-info-item {
+            .ttl {
+              background-color: $base_sky_blue;
+              color: #fff;
+            }
+          }
+        }
+      }
+      .arrow {
+        transform: translateY(170px);
+        border-left: 20px solid #FD6D1F;
+        border-top: 20px solid rgba(0,0,0,0);
+        border-bottom: 20px solid rgba(0,0,0,0);
+        width: 0; height: 0;
+        @include breakpoint() {
+          border-top: 30px solid #FD6D1F;
+          border-left: 30px solid rgba(0,0,0,0);
+          border-right: 30px solid rgba(0,0,0,0);
+          border-bottom: none;
+          transform: none;
+          margin: 40px auto;
+        }
+      }
+    }
+  }
+
+  &._area {
+    padding: 0;
+
+    @media screen and (max-width: 922px) {
+      padding-right: 20px;
+      padding-left: 20px;
+      margin: 0 auto;
+    }
+  }
+}
+// 市区町村ページ、都道府県ページ
+.area {
+  #customer-voice {
+    margin: 30px -15px 0;
+
+    .customer-voice-container {
+      max-width: 900px;
+      margin: auto;
+
+      h2 {
+        margin: 0;
+
+        @include breakpoint() {
+          padding: 20px;
+          margin: 0 15px;
+          line-height: inherit;
+        }
+      }
+
+      .customer-voice-item {
+        @include breakpoint() {
+          margin: 30px 12px 0 11px;
+        }
+        &:first-of-type {
+          margin-top: 30px;
+        }
+
+        &._page {
+          @include breakpoint() {
+            margin: 30px 0 0;
+          }
+        }
+      }
+    }
+
+    &._shortcode {
+      margin-left: -22px;
+      margin-right: -22px;
+    }
+  }
+  // 施工実績数
+  .construction-records {
+    ul {
+      margin: 0;
+      li {
+        display: block;
+        margin: 0;
+        font-weight: normal;
+        line-height: inherit;
+        color: inherit;
+        &::before {
+          display: none;
+        }
+      }
+    }
+    p {
+      margin: 0;
+    }
+    .records-center {
+      text-align: center;
+    }
+    .records-total {
+      margin-top: 40px;
+      .number {
+        font-size: 2.6em;
+        font-weight: bold;
+        margin: 0 8px;
+      }
+    }
+    .records-panels-wrapper {
+      display: inline-block;
+    }
+    .records-panels {
+      margin-top: 40px;
+      @media screen and (max-width: 480px) {
+        font-size: 12px;
+      }
+      .records-panel {
+        width: 50%;
+        text-align: center;
+        border: 1px solid #000;
+        padding: 20px;
+        @media screen and (max-width: 480px) {
+          padding: 20px 10px;
+        }
+        .number-wrapper {
+          .number {
+            font-size: 2.4em;
+            font-weight: bold;
+            margin: 0 8px;
+          }
+        }
+      }
+    }
+    .annotation {
+      text-align: left;
+      @media screen and (max-width: 480px) {
+        font-size: 12px;
+      }
+    }
+    .records-areas {
+      margin-top: 40px;
+      .areas-box {
+        border: 1px solid #000;
+        padding: 16px;
+      }
+    }
+  }
+}
+.sekou_detail .other-articles .heading {
+  color: $base_blue;
+  background-color: #fff;
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: .1em;
+  font-weight: bold;
+  margin-bottom: 40px;
+  @include breakpoint() {
+    margin-bottom: 16px;
+  }
+}

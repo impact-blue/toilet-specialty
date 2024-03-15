@@ -1,0 +1,164 @@
+#price {
+  text-align: center;
+
+  @include breakpoint() {
+    text-align: left;
+  }
+
+  h1,
+  .bg-water-surface {
+    @include bg_water_surface();
+  }
+
+  .inner {
+    max-width: 1200px;
+    padding: 0 15px;
+  }
+
+  .contents {
+    .text {
+      font-size: 18px;
+      line-height: 2.2;
+
+      @include breakpoint() {
+        padding: 10px 0 0;
+        margin: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 2;
+      }
+
+      .top {
+        padding: 30px 0 42px;
+      }
+    }
+
+    // サービス紹介
+    .service-and-price-contents {
+      &.graph-paper-bg {
+        background-image: url("../img/graph-paper-bg-unit.png");
+        -webkit-background-size: 20px;
+        background-size: 20px;
+      }
+
+      .container {
+        position: relative;
+        z-index: 1000;
+        padding: 74px 0 89px;
+        margin: -2.5vw auto 0;
+
+        @include breakpoint() {
+          padding: 25px 0 58px;
+          margin: 0 auto;
+        }
+      }
+
+      .text-center {
+        font-weight: bold;
+
+        &.black {
+          padding: 8px 0 40px;
+          font-size: 14px;
+          line-height: 2.1;
+
+          @include breakpoint() {
+            padding: 0 3.3vw;
+            margin: auto;
+          }
+        }
+      }
+
+      .heading-img {
+        padding: 100px 0 40px;
+
+        @include breakpoint() {
+          padding: 42px 0 22px;
+        }
+      }
+    }
+
+    .trouble-zero {
+      @include trouble_zero_style();
+      background: none;
+    }
+  }
+
+  .service-flow-contents {
+    .container {
+      @include breakpoint() {
+        max-width: unset;
+      }
+    }
+  }
+
+  // お支払い方法
+  .payment-method {
+    text-align: center;
+
+    &.top-parts {
+      padding: 40px 0 0;
+      @include breakpoint() {
+        padding: 10px 0 50px;
+      }
+    }
+
+    .container {
+      width: auto;
+      padding: 0 15px;
+      @include breakpoint() {
+        max-width: unset;
+      }
+    }
+
+    .text {
+      margin: 50px 0 0;
+      font-size: 18px;
+      line-height: 2.2;
+      text-align: center;
+      @include breakpoint() {
+        padding: 10px 0 0;
+        margin: 20px auto auto;
+        font-size: 16px;
+        line-height: 2;
+      }
+    }
+
+    ul {
+      display: inline-flex;
+      justify-content: center;
+      padding: min(1.7vw, 24.5px) min(1.8vw, 26px);
+      margin: 30px 0 50px;
+      border: 2px solid $base_royal_blue;
+      @include breakpoint() {
+        padding: 2vw 0;
+      }
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 min(3vw, 43.2px);
+        border-right: 1px solid $base_light_gray;
+        &:last-of-type {
+          border-right: none;
+        }
+      }
+      svg {
+        width: auto;
+        height: min(2vw, 14px);
+        @include breakpoint() {
+          height: min(1.8vw, 14px);
+        }
+      }
+      img {
+        height: 3vw;
+        margin: 0.5vw 0 0;
+        object-fit: contain;
+        @include breakpoint() {
+          height: 3.4vw;
+          margin: 1.3vw 0 0;
+        }
+      }
+    }
+  }
+}

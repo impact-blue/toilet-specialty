@@ -1,0 +1,388 @@
+#contact {
+  .contents {
+    transform: translateY(-171px);
+
+    @include breakpoint() {
+      transform: translateY(-80px);
+    }
+  }
+
+  .container {
+    max-width: 1000px;
+  }
+
+  .heading-bg {
+    position: relative;
+    height: 209px;
+    background: $base_light_blue;
+
+    @include breakpoint() {
+      height: 87px;
+    }
+
+    &::before {
+      position: absolute;
+      bottom: -555px;
+      width: 0;
+      height: 0;
+      content: "";
+      border-color: $base_light_blue transparent transparent transparent;
+      border-style: solid;
+      border-width: 555px 100vw 0 0;
+    }
+  }
+
+  .heading {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    justify-content: flex-end;
+
+    @include breakpoint(tablet) {
+      justify-content: center;
+    }
+
+    .left {
+      .heading-img {
+        max-width: 715px;
+        -ms-transform: translateX(22%) translateX(-148px);
+        transform: translateX(calc(22% - 148px));
+
+        @include breakpoint() {
+          transform: translateX(0);
+        }
+      }
+
+      .left-bottom {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        margin: 12px 0 25px;
+        -ms-transform: translateX(22%) translateX(-116px);
+        transform: translateX(calc(22% - 116px));
+
+        @include breakpoint(tablet) {
+          transform: translateX(0);
+          margin: 12px 0 40px;
+        }
+
+        .info-img {
+          max-width: 289px;
+
+          @include breakpoint(tablet) {
+            width: 44%;
+          }
+        }
+        .call-tap {
+          position: relative;
+          pointer-events: none;
+          @include breakpoint() {
+            pointer-events: auto;
+          }
+          .tel-annotation {
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translate(-50%, 100%);
+            color: $base_vivid_orange;
+            font-weight: bold;
+            font-size: min(17px, 2.3vw);
+            width: 96%;
+            line-height: 1.3;
+          }
+        }
+        .tel-img {
+          max-width: 385px;
+          margin: 0 0 0 5px;
+        }
+      }
+    }
+
+    .woman-img {
+      max-width: 316px;
+      padding: 0 10px 0 0;
+
+      @include breakpoint(tablet) {
+        display: none;
+      }
+    }
+  }
+
+  .contact-form {
+    position: relative;
+    z-index: 1000;
+    background: #fff;
+    border-top: 30px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+
+    .contact-heading {
+      padding: 21px 0 20px;
+      font-size: 30px;
+      line-height: 1.3;
+      color: #fff;
+      text-align: center;
+      background: linear-gradient(180deg, #2444a2 20%, #041d42 55%);
+      border: 3px inset #567cb5;
+
+      @include breakpoint() {
+        padding: 12px;
+        font-size: 16px;
+      }
+    }
+
+    .contact-inner {
+      max-width: 800px;
+
+      &.container {
+        @include breakpoint() {
+          width: 88%;
+        }
+      }
+
+      // フォームの上の文章
+      .contact-info {
+        margin: 45px 0 55px;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.7;
+        text-align: center;
+        letter-spacing: 1.4px;
+
+        @include breakpoint() {
+          margin: 30px 0 43px;
+          letter-spacing: 0;
+        }
+      }
+
+      form {
+        .row {
+          display: flex;
+          justify-content: space-between;
+          margin: 0 0 40px;
+
+          @include breakpoint() {
+            display: block;
+          }
+
+          input,
+          textarea {
+            box-sizing: border-box;
+            width: 100%;
+            min-width: 571px;
+            padding: 16px 0 16px 17px;
+            font-size: 16px;
+            border: 1px solid #bebebe;
+
+            @include breakpoint() {
+              min-width: initial;
+            }
+          }
+
+          textarea {
+            padding: 16px 28px 16px 17px;
+            resize: vertical;
+          }
+
+          // エラーメッセージ
+          .error {
+            margin: 15px 0 0;
+            text-align: left;
+          }
+
+          .heading {
+            display: flex;
+            align-items: flex-start;
+            margin: 16px 0 0;
+
+            @include breakpoint() {
+              justify-content: end;
+              margin: 0 0 10px;
+            }
+
+            // テキスト
+            .label-left {
+              font-weight: bold;
+              letter-spacing: 1.6px;
+            }
+
+            // テキストの横のラベル
+            .label-right {
+              &.required {
+                max-height: 18px;
+                padding: 3px 4px 4px;
+                margin: 0 0 0 5px;
+                font-size: 11px;
+                color: #fff;
+                background: #fc405c;
+                border-radius: 5px;
+              }
+            }
+          }
+        }
+
+        .btn-area {
+          margin: 74px 0 0;
+          text-align: center;
+
+          // 送信ボタン
+          .submit-btn {
+            position: relative;
+            margin: auto;
+            letter-spacing: 1px;
+            background: rgb(252, 64, 64);
+            @include form_submit_btn(
+              linear-gradient(180deg, rgba(252, 64, 64, 1) 0%, rgb(255 140 140 / 80%) 100%),
+              400px
+            );
+
+            @include breakpoint() {
+              width: 100%;
+            }
+
+            input {
+              width: 400px;
+              max-width: 400px;
+              padding: 20px;
+              font-size: 20px;
+              font-weight: bold;
+              color: #fff;
+              cursor: pointer;
+              background: transparent;
+              border: none;
+
+              @include breakpoint() {
+                width: 100%;
+                padding: 17px 15px;
+                font-size: 16px;
+              }
+            }
+            &::before {
+              position: absolute;
+              top: calc(50% - 11px);
+              right: 20px;
+              width: 21px;
+              height: 21px;
+              content: "";
+              background: #fff;
+              border-radius: 15px;
+            }
+            &::after {
+              position: absolute;
+              right: 24px;
+              bottom: calc(50% - 4px);
+              width: 0;
+              height: 0;
+              content: "";
+              border-color: transparent transparent transparent #fc405c;
+              border-style: solid;
+              border-width: 5px 0 5px 8.7px;
+            }
+          }
+
+          // クリアボタン
+          #clear-btn {
+            display: inline-block;
+            padding: 14px 0 12px;
+            margin: 22px 0 48px;
+            font-size: 14px;
+            color: #898989;
+            letter-spacing: 1.4px;
+            @include form_submit_btn(#ebebeb, 240px);
+          }
+
+          .back-btn {
+            display: none;
+            @extend #clear-btn;
+          }
+        }
+      }
+
+      // お問い合わせ確認画面
+      #contact-confirm {
+        margin: 75px 0 0;
+
+        @include breakpoint() {
+          margin: 43px 0 0;
+        }
+
+        .contact-info {
+          display: none;
+        }
+
+        form {
+          .row {
+            p {
+              width: 70%;
+              margin: 16px 0 0;
+            }
+          }
+        }
+
+        .btn-area {
+          p {
+            #clear-btn {
+              display: none;
+            }
+            .back-btn {
+              display: inline-block !important;
+              margin: 20px 0 60px;
+            }
+          }
+        }
+      }
+
+      // お問い合わせ完了画面
+      #contact-finished {
+        margin: 0 0 83px;
+        text-align: center;
+
+        @include breakpoint() {
+          margin: 0;
+        }
+
+        // チェックマーク
+        .check-mark {
+          width: 100%;
+          max-width: 78px;
+          height: auto;
+          margin: 68px 0 0;
+
+          @include breakpoint() {
+            margin: 50px 0 0;
+          }
+        }
+
+        h2 {
+          margin: 21px 0 40px;
+          font-size: 25px;
+          line-height: 1.4;
+
+          @include breakpoint() {
+            margin: 21px 0 30px;
+            font-size: 20px;
+          }
+        }
+
+        .finished-info {
+          padding: 30px 0 83px;
+          font-size: 18px;
+          line-height: 2;
+          border-top: 1px solid #00000029;
+
+          @include breakpoint() {
+            padding: 30px 0 50px;
+            font-size: 14px;
+            line-height: 1.7;
+          }
+        }
+      }
+
+      // 送信エラーが発生した場合に表示される文言
+      .mw_wp_form_send_error {
+        padding: 0 0 15px;
+        font-weight: bold;
+        color: red;
+      }
+    }
+  }
+}
