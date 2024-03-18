@@ -1,14 +1,41 @@
 <?php
 global $paged;
 get_header();
+
 $terms = get_the_terms($post->ID, 'sekou');
+$term_list = get_sekou_tags();
+$page_id = get_page_by_path('sekou')->ID;
 ?>
   <main>
     <section id="post-list" class="sekou">
-      <h1 class="heading">施工事例一覧</h1>
+      <h1 class="heading">トイレトラブル解消系記事一覧</h1>
+      <div class="sekou-tags">
+        <h2 class="sekou-tags-ttl">タグから記事を探す</h2>
+        <ul class="sekou-tags-list">
+        <?php 
+        $counter = 0; 
+        foreach ($term_list as $term) { 
+        ?>
+          <li class="sekou-tags-item"><a href="<?= get_term_link($term->term_id); ?>"><?= $term->name; ?></a></li>
+        <?php if ($counter >= 3) {break;} $counter++ ?>
+        <?php } ?>
+        </ul>
+        <div class="sekou-tags-btn">もっと見る</div>
+        <ul class="sekou-tags-list">
+        <?php 
+        $counter = 0;
+        foreach ($term_list as $term) { 
+          if ($counter >= 4) {
+        ?>
+          <li class="sekou-tags-item"><a href="<?= get_term_link($term->term_id); ?>"><?= $term->name; ?></a></li>
+        <?php 
+          }
+          $counter++;
+        } 
+        ?>
+        </ul>
+      </div>
       <div class="container">
-        <?php
-         get_template_part('template-parts/term-list'); ?>
         <?php
         if (have_posts()) {
           while (have_posts()) {
@@ -26,12 +53,6 @@ $terms = get_the_terms($post->ID, 'sekou');
               <h2 class="ttl"><a href="<?= esc_url(get_permalink()); ?>">
                 <?php the_title(); ?>
               </a></h2>
-              <p class="description">
-                <?php the_excerpt() ?>
-              </p>
-              <div class="date-area">
-                <time datetime="<?php the_time('Y-m-d') ?>" itemprop="datePublished"><?php the_time('Y年m月d日') ?></time>
-              </div>
               <div class="archive-taxonomy-wrap">
                 <?php
                   if($terms) {
@@ -42,6 +63,9 @@ $terms = get_the_terms($post->ID, 'sekou');
                   <div class="archive-taxonomy"><a href="<?= $term_link ?>"><?= $term_name ?></a></div>
                 <?php }} ?>
               </div>
+              <p class="description">
+                <?php the_excerpt() ?>
+              </p>
             </div>
           </div>
         <?php
@@ -52,6 +76,8 @@ $terms = get_the_terms($post->ID, 'sekou');
           <?php archive_paginate(); ?>
         </div>
       </div>
+      <?php get_template_part('template-parts/new-cta');?>
     </section>
+    <?php  ?>
   </main>
 <?php get_footer(); ?>

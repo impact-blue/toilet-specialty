@@ -77,6 +77,15 @@ function jsgt_styles() {
 }
 add_action('wp_enqueue_scripts', 'jsgt_styles');
 
+// フォントを読み込む
+function load_google_fonts() {
+  wp_enqueue_style( 'noto-sans-jp', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap', array(), null );
+  wp_enqueue_style( 'noto-sans-cjk-jp', 'https://fonts.googleapis.com/css2?family=Noto+Sans+CJK+JP:wght@100;200;300;400;500;600;700;800;900&display=swap', array(), null );
+  wp_enqueue_style( 'inter', 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap', array(), null );
+  wp_enqueue_style( 'roboto', 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap', array(), null );
+}
+add_action( 'wp_enqueue_scripts', 'load_google_fonts' );
+
 // 不要なスタイル・スクリプトの読み込み停止
 function dequeue_plugins_style() {
   wp_dequeue_style('wp-block-library');
@@ -1130,7 +1139,7 @@ function get_customer_voice_linked_to_small_area($post_id) {
     'order' => 'DESC',
     'meta_key' => 'small_area_id',
     'meta_value' => '"'.$post_id.'"',
-	  'meta_compare' => 'LIKE',
+    'meta_compare' => 'LIKE',
     'fields' => 'ids'
   ];
 
@@ -1774,18 +1783,18 @@ add_action( 'pre_get_posts','search_filter' );
 
 //記事一覧にカラムを追加
 function add_posts_column($columns) {
-  $columns['last_modified']	= '最終更新日';
-  return	$columns;
+  $columns['last_modified'] = '最終更新日';
+  return  $columns;
 }
 add_filter( 'manage_posts_columns', 'add_posts_column',20 );
 
 //最終更新日の取得と表示
 function add_posts_column_value($column_name, $post_id) {
   if ( 'last_modified' == $column_name ) {
-      $date		= get_the_modified_date('Y年n月j日 g:i A');
-      $show_date	= '最終更新日'.'<br />'.$date;
+      $date   = get_the_modified_date('Y年n月j日 g:i A');
+      $show_date  = '最終更新日'.'<br />'.$date;
 
-      echo	$show_date;
+      echo  $show_date;
   }
 }
 add_action( 'manage_item_detail_posts_custom_column', 'add_posts_column_value', 10, 2 );
@@ -1797,8 +1806,8 @@ add_action( 'manage_sekou_detail_posts_custom_column', 'add_posts_column_value',
 
 //並び替えを可能にする
 function add_posts_column_sortable( $columns ) {
-	$columns['last_modified'] = 'modified';
-	return $columns;
+  $columns['last_modified'] = 'modified';
+  return $columns;
 }
 add_filter( 'manage_edit-item_detail_sortable_columns', 'add_posts_column_sortable' );
 add_filter( 'manage_edit-area_detail_sortable_columns', 'add_posts_column_sortable' );

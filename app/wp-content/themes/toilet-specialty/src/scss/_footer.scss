@@ -19,6 +19,7 @@
 
 #footer {
   width: 100vw;
+  font-family: 'Noto Sans CJK JP', sans-serif;
   @include breakpoint() {
     padding: 0 0 19.34vw 0;
   }
@@ -30,12 +31,7 @@
     }
   }
   .institutions {
-    padding: 0 3vw 9vw;
-    margin: 54px 0 0;
-    background-image: url(../img/bg-water-surface.png);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 100vw;
+    margin: 90px 0 50px;
     @include breakpoint() {
       padding: 11.5vw 0 0;
       margin: 0;
@@ -70,10 +66,9 @@
   }
   .foot {
     width: 100vw;
-    padding: 31px 0 55px 0;
-    margin: -2.8vw 0 0;
+    padding: 50px 0 20px 0;
     color: #121212;
-    background-color: #d4ecf7;
+    background-color: #eef6fe;
     @include breakpoint() {
       padding: 6.9vw 0;
       margin: 0;
@@ -96,7 +91,7 @@
       flex-direction: column;
       justify-content: start;
       width: 275px;
-      padding: 31px 0 0;
+      padding: 10px 0 0;
       @include breakpoint() {
         width: 100%;
         padding: 0;
@@ -114,9 +109,11 @@
         border-bottom: 2px solid $base_royal_blue;
       }
     }
+    .company-block {
+      margin: 21px 0 0;
+    }
     .contact-block {
       margin: 18px 0 0;
-      border-top: 1px solid $base_light_gray;
       @include breakpoint() {
         margin: 0;
         border-top: none;
@@ -131,29 +128,12 @@
       padding: 10px 0;
       font-size: 18px;
       font-weight: 500;
-      border-bottom: 1px solid $base_light_gray;
       @include breakpoint() {
         width: auto;
         padding: 3.7vw 0 3.7vw 2.4vw;
         font-size: clamp(14px, 3.7vw, 28px);
         cursor: pointer;
         border-bottom: none;
-      }
-      &::after {
-        position: absolute;
-        top: 0;
-        right: 20px;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 16px;
-        font-weight: 200;
-        content: ">";
-        @include breakpoint() {
-          right: 3.3vw;
-          font-size: min(4vw, 30px);
-        }
       }
     }
     .toggle-header {
@@ -264,12 +244,11 @@
   }
   .copyright {
     width: 100vw;
-    padding: 18px 0;
+    padding: 70px 0 0;
     font-size: 15px;
     color: #686868;
     text-align: center;
     display: inline-block;
-    margin: 0 0 100px;
 
     @include breakpoint() {
       margin: 0;
@@ -400,16 +379,28 @@
   }
   .heading {
     display: block;
-    padding: 54px 0 23px !important;
-    margin: 0 !important;
+    padding: 54px 0 30px !important;
+    margin: 0 0 40px 0 !important;
     font-size: 38px !important;
     color: $base_royal_blue !important;
     text-align: center !important;
     background-color: transparent !important;
     background-image: none !important;
+    position: relative;
     @include breakpoint() {
       padding: 13.3vw 0 3vw !important;
       font-size: clamp(24px, 6vw, 45px) !important;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 82px;
+      height: 3px;
+      background: $base_royal_blue;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
     }
   }
   .container {
@@ -419,6 +410,7 @@
     margin: 0 auto;
   }
   .area-block {
+    font-family: 'Noto Sans CJK JP', sans-serif;
     margin: 30px 0;
     @include breakpoint() {
       margin: 4vw 0;
@@ -457,7 +449,6 @@
   }
   .areas {
     padding: 30px 45px;
-    background-color: #fff;
     @include breakpoint() {
       display: flex;
       flex-wrap: wrap;
@@ -478,26 +469,14 @@
         margin-top: 3.6vw;
       }
       .area-link {
-        margin: 0 40px 0 20px;
+        margin: 0 20px;
+        font-weight: bold;
         text-decoration: underline;
         &:hover {
           cursor: pointer;
         }
         @include breakpoint() {
           margin: 0 clamp(25px, 6.6vw, 50px) 0 clamp(12px, 3.3vw, 25px);
-        }
-      }
-      &::before {
-        top: 0;
-        left: 0;
-        margin: auto;
-        content: "";
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 15px solid $base_royal_blue;
-        @include breakpoint() {
-          margin: auto 0;
-          border-width: 1.3vw 0 1.3vw 2vw;
         }
       }
       .area-modal-wrapper {
@@ -517,6 +496,7 @@
           background-color: rgba(0,0,0,.6);
         }
         .area-modal {
+          background: #fff;
           position: absolute;
           top: 50%; left: 50%;
           transform: translate(-50%, -50%);
@@ -538,6 +518,25 @@
           }
           .area-block-ttl {
             text-decoration: underline;
+          }
+          .areas li {
+            position: relative;
+            width: 140px;
+            margin: 10px 5px 0 0;
+
+            &::before {
+              content: '';
+              position: absolute;
+              width: 0;
+              height: 0;
+              border-style: solid;
+              border-top: 4px solid transparent;
+              border-bottom: 4px solid transparent;
+              border-left: 7px solid $base_royal_blue;
+              border-right: 0;
+              top: 50%;
+              transform: translateY(-50%);
+            }
           }
           @include breakpoint() {
             .areas li {
@@ -566,3 +565,4 @@
     margin-top: 60px;
   }
 }
+

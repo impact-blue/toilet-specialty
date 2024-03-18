@@ -29,7 +29,7 @@
     </div>
   </h2>
   <div class="container">
-    <?php if (is_front_page()) get_template_part('template-parts/zip-code/search'); ?>
+    <?php get_template_part('template-parts/zip-code/search'); ?>
     <?php if ($pref_name_obj) { ?>
       <?php foreach ($pref_name_obj as $area_name => $prefs) { ?>
         <div class="area-block">

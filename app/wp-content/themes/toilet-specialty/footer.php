@@ -14,21 +14,13 @@ if (
 
 if(
   is_front_page()
-  || is_singular(['item_detail', 'article_detail'])
-  || is_post_type_archive(['item_detail', 'article_detail'])
+  || is_singular(['item_detail', 'article_detail' ,'sekou_detail'])
+  || is_post_type_archive(['item_detail', 'article_detail' ,'sekou_detail'])
 ) {
 // 対応エリア一覧
 get_template_part('template-parts/area-list');
 }
-
-// お問い合わせの時はトップへ戻るボタンの高さを30pxにする
-$is_contact_page_class = null;
-
-if (is_page('contact')) {
-  $is_contact_page_class = 'contact-pagetop';
-}
 ?>
-  <a href="#" id="pagetop" class="<?= $is_contact_page_class ?>"><img src="<?= $template_path ?>/img/pagetop.png" width="100" height="100" alt="page top"></a>
 
   <footer id="footer">
     <div class="institutions <?php if(is_singular('area_detail')) echo "_area" ?>">
@@ -55,6 +47,7 @@ if (is_page('contact')) {
         <div class="column sp-column block">
           <a class="sp-header" href="/">ホーム</a>
         </div>
+        <div class="header toggle-header"><a href="/">ホーム</a></div>
         <div class="column">
           <div class="block">
             <div class="header toggle-header">サービス紹介</div>
@@ -103,6 +96,7 @@ if (is_page('contact')) {
             <a class="header" href="/contact/">無料見積り依頼フォーム</a>
           </div>
         </div>
+        <p class="copyright is-pc">©️水道修理ルート</p>
       </div>
     </div>
     <div class="foot-cta is-sp">
@@ -119,15 +113,7 @@ if (is_page('contact')) {
       </div>
       <svg class="reception-time" xmlns="http://www.w3.org/2000/svg" width="719" height="26" viewBox="0 0 719 26"><defs><style>.a{fill:#1a42aa;font-size:19.329px;font-family:HiraginoSans-W7, Hiragino Sans;}.b{fill:#f0033c;font-size:23.471px;}</style></defs><text class="a" transform="translate(0 21)"><tspan x="0" y="0">【受付時間】</tspan><tspan class="b" y="0">24</tspan><tspan y="0">時間</tspan><tspan class="b" y="0">365</tspan><tspan y="0">日対応 | お見積もり</tspan><tspan class="b" y="0">0円</tspan><tspan y="0" xml:space="preserve"> | 出張費</tspan><tspan class="b" y="0">0円</tspan><tspan y="0" xml:space="preserve"> | 深夜割増</tspan><tspan class="b" y="0">0円</tspan></text></svg>
     </div>
-    <p class="copyright is-pc">©️水道修理ルート</p>
   </footer>
-
-  <div class="footer-banner-pc is-pc">
-    <div class="footer-banner-wrap">
-      <div class="footer-banner-img"><img src="<?= $template_path ?>/img/banner-pc.png" alt=""></div>
-      <div class="footer-banner-btn"><a href="<?= esc_url(home_url('/contact/')); ?>"><img src="<?= $template_path ?>/img/banner-pc-btn.png" alt=""></a></div>
-    </div>
-  </div>
 
   <a href="tel:<?= get_phone_number() ?>" class="footer-banner is-sp tel tel-banner">
     <img src="<?= $template_path ?>/img/sp-banner.png?20220214" alt="フッターバナー">
@@ -155,3 +141,4 @@ if (is_page('contact')) {
   <?php wp_footer(); ?>
 </body>
 </html>
+

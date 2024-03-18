@@ -262,7 +262,7 @@ select {
 
 html {
   overflow-x: hidden;
-  font-family: "ヒラギノ角ゴシック", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 16px;
   word-break: break-all;
 }
@@ -291,7 +291,7 @@ img {
 /* container */
 .container {
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
 
   @include breakpoint() {
@@ -329,15 +329,16 @@ img {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  max-width: 1180px;
-  padding: 0 15px;
-  margin: 14px auto;
+  max-width: 100%;
+  padding: 8px 0 8px 15%;
+  margin: 0 auto;
   overflow-y: hidden;
   font-size: 12px;
-  color: #747474;
+  color: #9E9E9E;
   white-space: nowrap;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  background: #eaf5ff;
   a {
     &:hover {
       text-decoration: underline;
@@ -848,12 +849,6 @@ img {
       display: flex;
       flex-wrap: wrap;
       padding: 0 0 20px;
-      &.sekou-tags {
-        margin-top: 20px;
-        @include breakpoint() {
-          margin-top: 3vw;
-        }
-      }
     }
 
     a {
@@ -3191,18 +3186,15 @@ img {
   }
 }
 
-.archive-taxonomy-wrap {
-  margin: 0 0 0 -5px;
-}
-
 .archive-taxonomy {
   padding: 5px;
-  margin: 10px 0 0;
-  font-size: 16px;
+  margin: 15px 0 0;
+  padding: 4px 12px;
+  font-size: 12px;
   font-weight: normal;
-  color: #043377;
-  background: #e5efff;
-  border-radius: 6px;
+  color: #fff;
+  background: #2e86d8;
+  border-radius: 30px;
   display: inline-block;
 }
 

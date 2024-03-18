@@ -22,6 +22,7 @@
       line-height: 43px;
       color: $base_royal_blue;
       text-align: center;
+      font-weight: bold;
       @include breakpoint() {
         font-size: clamp(12px, 2.9vw, 22px);
         line-height: clamp(12px, 2.9vw, 22px);

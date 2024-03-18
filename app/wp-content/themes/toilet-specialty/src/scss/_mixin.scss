@@ -2,23 +2,30 @@
 
 // 水面の背景付き見出し
 @mixin bg_water_surface() {
-  position: relative;
-  left: calc(-50vw + 50%);
   box-sizing: border-box;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
   width: 100vw;
-  height: 9vw;
-  padding: 0 15px;
+  padding: 0 0 30px;
+  margin: 40px 0 35px !important;
   margin: 0;
   font-size: clamp(24px, 2.7vw, 38px);
   line-height: 1.2;
   color: $base_royal_blue;
-  background-color: transparent;
-  background-image: url(../img/bg-water-surface.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 82px;
+    height: 3px;
+    background: #01529c;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 0;
+  }
 
   @include breakpoint() {
     height: 151px;
@@ -432,7 +439,7 @@
 
 // ページネーションのスタイル
 @mixin paginate_style() {
-  margin: 60px 0 160px;
+  margin: 50px 0 100px;
   text-align: center;
 
   @include breakpoint() {
@@ -441,9 +448,9 @@
 
   .prev,
   .next {
-    font-size: 14px !important;
-    font-weight: normal !important;
-    color: #000 !important;
+    font-size: 17px !important;
+    font-weight: bold !important;
+    color: $base_royal_blue !important;
 
     @include breakpoint() {
       font-size: 12px !important;
@@ -452,7 +459,7 @@
 
   .prev {
     &.page-numbers {
-      margin: 0 80px 0 0;
+      margin: 0 50px 0 0;
 
       @include breakpoint() {
         margin: 0;
@@ -462,7 +469,7 @@
 
   .next {
     &.page-numbers {
-      margin: 0 0 0 90px;
+      margin: 0 0 0 50px;
 
       @include breakpoint() {
         margin: 0;
@@ -471,8 +478,8 @@
   }
 
   .page-numbers {
-    margin: 0 8px;
-    font-size: 18px;
+    margin: 0 5px;
+    font-size: 21px;
     font-weight: bold;
     color: #bcbcbc;
 
@@ -486,10 +493,11 @@
       color: $base_dark_blue;
       &::before {
         position: absolute;
-        bottom: -5px;
-        left: -3px;
-        width: 150%;
-        height: 1px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 110%;
+        height: 2px;
         content: "";
         background: $base_dark_blue;
       }

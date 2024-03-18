@@ -194,7 +194,7 @@ jQuery(function($) {
   // トップページの指定番号コンテンツのアコーディオン
   $('.top-admitted-head').on('click', function() {
     $(this).next().slideToggle();
-    $(this).toggleClass('_active');
+    ;
   })
 
   // 大エリアの対応エリア一覧のアコーディオン
@@ -203,4 +203,9 @@ jQuery(function($) {
     $(this).next().slideToggle();
     $(this).find(".area-block-bar.low").toggleClass("open");
   });
+
+  // 施工事例タグのアコーディオン
+  $('.sekou-tags-btn').on('click', function() {
+    $(this).next().slideToggle();
+  })
 });
