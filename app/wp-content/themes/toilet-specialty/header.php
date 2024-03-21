@@ -27,12 +27,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="layer"></div>
 <header id="header">
   <div class="header-inner">
-    <div class="header-logo"></div>
-    <div class="header-right">
-      <div class="header-price header-btn"><a href="">料金</a></div>
-      <div class="header-area header-btn"><a href="">対応エリア</a></div>
-      <div class="header-contact header-btn"><a href="">お問い合わせ</a></div>
+    <div class="header-flex">
+      <div class="header-logo"></div>
+      <div class="header-right">
+        <div class="header-price header-btn"><a href="/price/">料金</a></div>
+        <div class="header-area header-btn"><a href="/area/">対応エリア</a></div>
+        <div class="header-contact header-btn"><a href="/contact/">お問い合わせ</a></div>
+      </div>
     </div>
+    <ul class="header-list">
+      <li class="header-item"><a href="/">ホーム</a></li>
+      <li class="header-item"><a href="/sekou/">施工事例一覧</a></li>
+      <li class="header-item"><a href="/article/">お役立ちコラム</a></li>
+      <li class="header-item"><a href="/customer-voice/">お客様の声</a></li>
+      <li class="header-item"><a href="/questions/">よくある質問</a></li>
+      <li class="header-item"><a href="">お急ぎの方へ</a></li>
+    </ul>
   </div>
 </header>
 

@@ -4,9 +4,7 @@ get_header();
 // タグ名を取得
 $sekou_tag_slug = get_query_var('sekou');
 $taxonomy_name = get_term_by('slug', $sekou_tag_slug, 'sekou')->name;
-
-// 該当タグ以外の記事を取得
-$other_articles = get_sekou_other_articles($sekou_tag_slug);
+$terms = get_the_terms($post->ID, 'sekou');
 ?>
   <main>
     <section id="post-list" class="area">
@@ -29,12 +27,19 @@ $other_articles = get_sekou_other_articles($sekou_tag_slug);
               <h2 class="ttl"><a href="<?= esc_url(get_permalink()); ?>">
                 <?php the_title(); ?>
               </a></h2>
+              <div class="archive-taxonomy-wrap">
+                <?php
+                  if($terms) {
+                    foreach($terms as $term) {
+                    $term_link = get_term_link($term);
+                    $term_name = $term->name;
+                ?>
+                  <div class="archive-taxonomy"><a href="<?= $term_link ?>"><?= $term_name ?></a></div>
+                <?php }} ?>
+              </div>
               <p class="description">
                 <?php the_excerpt() ?>
               </p>
-              <div class="date-area">
-                <time datetime="<?php the_time('Y-m-d') ?>" itemprop="datePublished"><?php the_time('Y年m月d日') ?></time>
-              </div>
             </div>
           </div>
         <?php
@@ -50,7 +55,6 @@ $other_articles = get_sekou_other_articles($sekou_tag_slug);
         </div>
       </div>
       <?php get_template_part('template-parts/new-cta');?>
-      <?php include('template-parts/post/sekou-other-articles.php');?>
     </section>
   </main>
 <?php get_footer(); ?>

@@ -5,13 +5,11 @@
   $without_area_code = preg_replace('/^\d+/', '', $phone_number);
 ?>
 <section class="new-cta">
-  <?php if (!is_tax('sekou')) {?>
   <div class="achievement-banner">
     <p>
       <span class="bold">皆様のおかげで<span class="yellow">創業21年。<br class="is-tablet">累計100万件以上</span>のご相談を頂戴しております！</span>
     </p>
   </div>
-  <?php } ?>
     <div class="is-sp sp-bottom">
       <div class="sp-bottom-wrap">
         <div class="ballon is-sp">
