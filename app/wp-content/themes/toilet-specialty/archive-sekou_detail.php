@@ -7,7 +7,7 @@ $page_id = get_page_by_path('sekou')->ID;
 ?>
   <main>
     <section id="post-list" class="sekou">
-      <h1 class="heading">トイレトラブル解消系記事一覧</h1>
+      <h1 class="heading">施工事例一覧</h1>
       <div class="container">
       <?php get_template_part('template-parts/term-list'); ?>
         <?php
