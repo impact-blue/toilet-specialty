@@ -1502,58 +1502,51 @@ img {
   }
   #questions {
     &.top-page-questions {
-      margin: 0 0 -125px 0;
-      background-color: $base_light_blue;
-      .container {
-        @include breakpoint() {
-          width: 93%;
+      margin: 0;
+      padding: 0 0 50px;
+      background-color: #fff;
+      .heading {
+        @include heading();
+        margin: 0 0 10px 0 !important;
+
+        &::before {
+          display: none;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 82px;
+          height: 3px;
+          background: $base_royal_blue;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 0;
         }
       }
+
       .contents {
         margin: 0 3vw;
+        position: static;
+        transform: translate(0);
       }
-      .heading {
-        padding: 0;
-        font-size: 38px;
-        .container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          h2 {
-            padding: 57px 0;
-            margin: 0 0 41px;
-            color: $base_royal_blue;
-            text-align: center;
-            @include breakpoint() {
-              padding: 68px 0;
-              font-size: clamp(23px, 6vw, 45px);
-              line-height: 1;
-            }
 
-            br {
-              display: none;
-
-              @include breakpoint() {
-                display: block;
-              }
-            }
-          }
-        }
+      .question-list {
+        margin: 0 3vw;
+        font-family: 'Noto Sans CJK JP', sans-serif;
       }
 
       // よくある質問一覧
       .question-item {
+        margin: 0 !important;
         border-radius: 3px !important;
         box-shadow: none !important;
         .question-and-answer {
-          padding: 35px 50px !important;
-          @include breakpoint() {
-            padding: 2.6vw 5.3vw !important;
-          }
+          padding: 0 !important;
           .item {
-            border-bottom: 1px dashed $base_light_gray !important;
+            border-bottom: 1px solid #bdbdbd !important;
             .question {
-              padding: 33.3px 0 20px !important;
+              padding: 30px 0 25px !important;
               color: $base_royal_blue !important;
               cursor: auto !important;
               @include breakpoint() {
@@ -1587,7 +1580,7 @@ img {
         // 答え
         .slide-item {
           display: block !important;
-          padding: 0 0 25.7px !important;
+          padding: 0 0 25px !important;
           color: #636363 !important;
           .answer {
             font-size: 16px !important;
@@ -1597,12 +1590,21 @@ img {
           }
           .icon {
             padding: 6px 18px 0 0 !important;
+
+            &.a-icon {
+              color: #f6a030 !important;
+            }
+
             @include breakpoint() {
               padding: clamp(8px, 1.8vw, 14px) 18px 0 0 !important;
               font-size: clamp(15px, 3.2vw, 24px) !important;
             }
           }
         }
+      }
+
+      .question-btn a {
+        @include btn_blue();
       }
     }
   }

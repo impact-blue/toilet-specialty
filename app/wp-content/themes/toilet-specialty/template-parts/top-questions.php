@@ -5,7 +5,6 @@ $area_name = get_area_name();
 
 $questions = '';
 
-$item_name = '';
 $post_id = get_the_ID();
 $item_slug = get_term_slug($post_id, 'item');
 
@@ -23,28 +22,12 @@ if (
   $top_class = 'class="top-page-questions"';
 }
 
-if(is_singular('area_detail') || is_page_template('page-pref.php')) {
-  if($item_slug == 'toilet' || $item_slug == '') {
-    $item_name = 'トイレつまり修理・水道修理';
-  } elseif($item_slug == 'water-pipe') {
-    $item_name = '水道管の水漏れ・つまり修理';
-  } elseif($item_slug == 'bath') {
-    $item_name = 'お風呂の蛇口交換・水漏れ修理';
-  }
-} else {
-  $item_name = 'トイレつまり修理・水道修理';
-}
-
 if ($questions) {
 ?>
   <div id="questions" <?= $top_class ?>>
-    <div class="heading">
-      <div class="container">
-        <h2 class="questions-ttl">
-          <?php if ($area_name) echo "{$area_name}で" ?><?= $item_name ?>に関するよくある質問
-        </h2>
-      </div>
-    </div>
+    <h2 class="questions-ttl heading">
+      <?php if ($area_name) echo "{$area_name}で" ?>トイレつまり修理に関するよくある質問
+    </h2>
     <div class="contents">
       <div class="container">
         <div class="question-list">
@@ -74,6 +57,7 @@ if ($questions) {
           </div>
         </div>
       </div>
+      <div class="question-btn"><a href="/question/">よくある質問をもっと見る</a></div>
     </div>
   </div>
 <?php

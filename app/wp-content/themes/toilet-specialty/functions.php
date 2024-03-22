@@ -2220,20 +2220,3 @@ function LastMonth() {
   return $date;
 }
 add_shortcode('last_month', 'LastMonth');
-
-// 各エリアページのアイテム名を取得
-function get_item_name() {
-  $item_name = '';
-  $post_id = get_the_ID();
-  $item_slug = get_term_slug($post_id, 'item');
-
-  if($item_slug == 'toilet') {
-    $item_name = 'トイレつまり';
-  } elseif($item_slug == 'water-pipe') {
-    $item_name = '水道管の水漏れ・つまり';
-  } elseif($item_slug == 'bath') {
-    $item_name = 'お風呂の蛇口交換・水漏れ';
-  }
-
-  return $item_name;
-}

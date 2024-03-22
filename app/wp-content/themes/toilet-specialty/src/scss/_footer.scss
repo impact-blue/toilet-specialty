@@ -378,30 +378,7 @@
     }
   }
   .heading {
-    display: block;
-    padding: 54px 0 30px !important;
-    margin: 0 0 40px 0 !important;
-    font-size: 38px !important;
-    color: $base_royal_blue !important;
-    text-align: center !important;
-    background-color: transparent !important;
-    background-image: none !important;
-    position: relative;
-    @include breakpoint() {
-      padding: 13.3vw 0 3vw !important;
-      font-size: clamp(24px, 6vw, 45px) !important;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 82px;
-      height: 3px;
-      background: $base_royal_blue;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 0;
-    }
+    @include heading();
   }
   .container {
     width: auto;
@@ -565,4 +542,3 @@
     margin-top: 60px;
   }
 }
-
