@@ -1,0 +1,66 @@
+.beginners {
+  padding: 0 3vw 50px;
+
+  &-ttl {
+    @include heading();
+    margin: 0 0 20px 0 !important;
+  }
+
+  &-txt {
+    text-align: center;
+    font-weight: 500;
+  }
+
+  &-subttl {
+    font-size: 23px;
+    font-weight: bold;
+    color: #ec6d23;
+    text-align: center;
+    margin: 40px 0 0;
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 0;
+  }
+
+  &-item {
+    width: 42%;
+    background: #fafafa;
+    border: solid 2px #e1e1e1;
+    border-radius: 5px;
+    padding: 3% 3.5% 4%;
+    text-align: center;
+
+    &:nth-of-type(n + 3) {
+      margin: 1.4% 0 0;
+    }
+
+    &-point {
+      font-family: 'Roboto', sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      width: 180px;
+      padding: 5px 0;
+      background: #ec6d23;
+      margin: 0 auto;
+      border-radius: 50px;
+    }
+
+    &-ttl {
+      font-size: 22px;
+      font-weight: 500;
+      color: $base_royal_blue;
+      margin: 23px 0 0;
+    }
+
+    &-txt {
+      font-weight: 500;
+      line-height: 1.5;
+      margin: 12px 0 0;
+    }
+  }
+}

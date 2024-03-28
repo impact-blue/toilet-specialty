@@ -19,6 +19,7 @@ if(
 ) {
 // 対応エリア一覧
 get_template_part('template-parts/area-list');
+get_template_part('template-parts/related-posts-in-page');
 }
 ?>
 

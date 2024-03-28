@@ -57,12 +57,12 @@
 ?>
 <div class="top-admitted">
   <?php if (is_front_page()) { ?>
-    <h2 class="top-admitted-ttl">水道修理ルート<br class="is-sp">（クリーンライフ）は、<br class="is-sp">各市町村から指定を受けた<br>指定給水装置工事事業者<br class="is-sp">(水道局指定工事店)です。</h2>
+    <h2 class="top-admitted-ttl">水道修理ルート<br class="is-sp">（クリーンライフ）は、<br class="is-sp">各市町村から指定を受けた<br><span>指定給水装置工事事業者<br class="is-sp">(水道局指定工事店)です。</span></h2>
   <?php } ?>
   <div class="top-admitted-inner <?php if(is_page_template('page-pref.php')) echo $pref_class ?>">
     <div class="top-admitted-header <?php if(is_page_template('page-pref.php')) echo $pref_class ?>">
-      <div class="top-admitted-pic <?php if(is_page_template('page-pref.php')) echo $pref_class ?>"><img src="<?= $template_path ?>/img/medal.webp" alt=""></div>
-      <p class="top-admitted-txt <?php if(is_page_template('page-pref.php')) echo $pref_class ?>">水道局指定工事店は、必要な機材・資材を取り揃えていて、適切な工事と正しい事務手続きを行い、誠実な対応ができると保証されている事業者になります。トイレつまりなどあらゆる水まわりのトラブルに対応可能ですので、安心してご依頼ください。</p>
+      <div class="top-admitted-pic <?php if(is_page_template('page-pref.php')) echo $pref_class ?>"><img src="<?= $template_path ?>/img/medal.png" alt=""></div>
+      <p class="top-admitted-txt <?php if(is_page_template('page-pref.php')) echo $pref_class ?>">水道局指定工事店は、必要な機材・資材を取り揃えていて、<br>適切な工事と正しい事務手続きを行い、誠実な対応ができると保証されている事業者になります。<br>トイレつまりなどあらゆる水まわりのトラブルに対応可能ですので、安心してご依頼ください。</p>
     </div>
     <?php if (is_front_page()) { ?>
       <ul class="top-admitted-area-list">

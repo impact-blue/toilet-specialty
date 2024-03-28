@@ -23,7 +23,7 @@ jQuery(function($) {
   $('.shop-info-ttl').on('click', function() {
     $(this).next().slideToggle();
     $(this).toggleClass('active');
-  })
+  });
 
   // 記事一覧のタグのアコーディオン
   $('#item-terms .tags-description-wrapper').on('click', function() {
@@ -109,11 +109,11 @@ jQuery(function($) {
     100 < $(this).scrollTop()
       ? $('#pagetop').fadeIn('fast')
       : $('#pagetop').fadeOut('fast');
-  })
+  });
 
   $('#pagetop').on('click', function() {
     return $('body,html').animate({ scrollTop:0 },400), !1;
-  })
+  });
 
   // お急ぎの方へのリンク変更
   window.onEmergencyLinkClick = function onEmergencyLinkClick(phoneNumber) {
@@ -135,22 +135,14 @@ jQuery(function($) {
   })
   $('.area-modal-bg, .area-modal-close').on('click', function() {
     $(this).closest('.area-modal-wrapper').removeClass('active');
-  })
+  });
 
-  // SP時のみスライダー適用
-  $(window).on('load resize', function() {
-    if ($('.customer-voice-slider')) {
-      const width = $(window).width();
-      if(width <= 768){
-        $('.customer-voice-slider').not('.slick-initialized').slick({
-          arrows: true,
-          prevArrow: '<div class="customer-voice-prev-arrow"></div>',
-          nextArrow: '<div class="customer-voice-next-arrow"></div>'
-        });
-      } else {
-        $('.customer-voice-slider.slick-initialized').slick('unslick');
-      }
-    }
+  // お客様の声のスライダー
+  $('.customer-voice-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    prevArrow: '<div class="slider-arrow prev-arrow"></div>',
+    nextArrow: '<div class="slider-arrow next-arrow"></div>'
   });
 
   // 料金比較表のアコーディオン
@@ -189,13 +181,13 @@ jQuery(function($) {
   $('.water-info-subttl').on('click', function() {
     $(this).next().slideToggle();
     $(this).children().toggleClass('_active');
-  })
+  });
 
   // トップページの指定番号コンテンツのアコーディオン
   $('.top-admitted-head').on('click', function() {
     $(this).next().slideToggle();
-    ;
-  })
+    $(this).toggleClass('_active');
+  });
 
   // 大エリアの対応エリア一覧のアコーディオン
   $(".area-block-ttl.pref").on('click', function(){
@@ -205,7 +197,8 @@ jQuery(function($) {
   });
 
   // 施工事例タグのアコーディオン
-  $('.sekou-tags-btn').on('click', function() {
+  $(".tags-list:nth-of-type(2)").hide();
+  $(".tags-btn").on('click', function() {
     $(this).next().slideToggle();
-  })
+  });
 });

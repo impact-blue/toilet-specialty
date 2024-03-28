@@ -590,11 +590,6 @@
     @include makers_style();
   }
 
-  // 申込の流れのショートコード
-  .service-flow {
-    @include service_flow();
-  }
-
   // 料金画像のショートコード
   .price {
     display: flex;

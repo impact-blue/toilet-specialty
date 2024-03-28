@@ -83,14 +83,6 @@
     }
   }
 
-  .service-flow-contents {
-    .container {
-      @include breakpoint() {
-        max-width: unset;
-      }
-    }
-  }
-
   // お支払い方法
   .payment-method {
     text-align: center;

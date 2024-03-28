@@ -1,102 +1,54 @@
 .crown {
-  position: relative;
-  left: calc(-50vw + 50%);
-  display: block;
-  width: 100vw;
-  margin: 0;
-  background: url(../img/bg-crown.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  img {
-    object-fit: contain;
-  }
-  .inner {
-    position: relative;
+  background: url(../img/bg-crown_02.png);
+
+  &-inner {
+    max-width: 995px;
+    margin: 0 auto;
+    padding: 67px 3vw 64px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: min(2.8vw, 40px) 6vw min(2.6vw, 36px) 7.1vw;
-    white-space: nowrap;
-    @include breakpoint() {
-      flex-direction: column;
-      padding: 5.7vw 0 7.4vw;
-      text-align: center;
-      white-space: normal;
-    }
+    justify-content: space-between;
+    align-items: end;
   }
-  .text {
-    position: relative;
-    font-family: serif;
-    .header {
-      font-size: clamp(24px, 4.2vw, 60px);
-      @include breakpoint() {
-        font-size: clamp(24px, 7.8vw, 59px);
-      }
-    }
-    p {
-      margin: 1.5vw 0 0;
-      font-size: clamp(12px, 1.1vw, 14px);
-      line-height: 1.6;
-      color: white;
-      @include breakpoint() {
-        margin: 6.2vw 0 0;
-        font-size: clamp(12px, 3vw, 24px);
-        line-height: 2.2;
-      }
-    }
+
+  &-left {
+    width: 37%;
+    max-width: 363px;
   }
-  .annotation {
-    position: absolute;
-    bottom: -2vw;
-    left: 0;
-    font-family: "ヒラギノ角ゴシック", sans-serif;
-    font-size: clamp(10px, 0.8vw, 12px);
-    color: white;
-    @include breakpoint() {
-      position: unset;
-      display: block;
-      margin: 4.9vw 0 0;
-      font-size: clamp(10px, 2.7vw, 19px);
-    }
+
+  p {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;    
   }
-  .certificates {
-    width: 13.7vw;
-    padding: 0.7vw 0 0.3vw;
-    color: $base_royal_blue;
+
+  &-head {
+    font-size: clamp(35px, 0.738rem + 3.02vw, 48px);
+    color: #fff65c;
+  }
+
+  &-txt {
+    font-size: clamp(14px, -1rem + 3.02vw, 17px);
+    margin: min(3vw, 35px) 0 0;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  &-annotation {
+    font-size: 10px;
+    margin: min(3vw, 35px) 0 0;
+    color: #fff;
+  }
+
+  &-right {
+    width: 63%;
+    max-width: 624px;
+  }
+
+  &-certificate {
+    font-size: clamp(14px, -1rem + 3.02vw, 17px);;
+    color: #000470;
+    padding: 8px;
+    background: #fff;
+    border-radius: 8px;
     text-align: center;
-    background-color: #fff;
-    border: 2px solid #707070;
-    border-radius: 5px;
-    @include breakpoint() {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 74.5vw;
-      height: 10.6vw;
-      margin: 5.7vw 0 0;
-      border-radius: 10px;
-    }
-    p {
-      margin: 0;
-      font-size: clamp(10px, 1.2vw, 18px);
-      line-height: 1.3;
-      @include breakpoint() {
-        font-size: clamp(10px, 2.9vw, 22px);
-      }
-    }
-    img {
-      width: 111%;
-      max-width: unset;
-      margin: 0 0 0 -5.5%;
-      @include breakpoint() {
-        width: 28.6vw;
-        margin: 0;
-      }
-    }
-  }
-  .crowns {
-    @include breakpoint() {
-      margin: 5.6vw 0 0;
-    }
+    margin: 3px 0 0;
   }
 }

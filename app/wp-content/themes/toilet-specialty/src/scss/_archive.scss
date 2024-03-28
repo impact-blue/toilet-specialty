@@ -1,12 +1,6 @@
 #post-list {
   .heading {
-    @include bg_water_surface();
-    @include breakpoint() {
-      display: inline-block;
-      height: auto;
-      padding: 110px 15px 0;
-      text-align: center;
-    }
+    @include heading();
   }
 
   // 投稿アイテム
@@ -15,40 +9,16 @@
     padding: 30px 0;
     border-bottom: 1px solid #bcbcbc;
 
-    @include breakpoint() {
-      display: block;
-      padding: 0 0 20px;
-    }
-
     .item-left {
       max-width: 313px;
       margin: 0 47px 0 0;
 
-      @include breakpoint() {
-        max-width: initial;
-        padding: 0;
-      }
-
       .item-left-img {
-        @include breakpoint() {
-          position: relative;
-          overflow: hidden;
-          padding-top: 55%;
-        }
-
         img {
           width: 313px;
           height: 193px;
           border-radius: 5px;
           object-fit: cover;
-
-          @include breakpoint() {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-          }
         }
       }
     }
@@ -63,15 +33,6 @@
           line-height: 1.4;
           color: #222;
           letter-spacing: 1px;
-
-          @include breakpoint() {
-            font-size: 18px;
-          }
-        }
-
-        @include breakpoint() {
-          display: block;
-          margin: 10px 0 0;
         }
       }
 
@@ -80,22 +41,11 @@
         font-size: clamp(13px, 0.589rem + 0.46vw, 15px); 
         color: #555;
         line-height: 1.6;
-
-        @include breakpoint() {
-          display: none;
-        }
       }
 
       .date-area {
         display: flex;
         align-items: flex-end;
-
-        @include breakpoint() {
-          display: block;
-          font-size: 12px;
-          text-align: right;
-          margin: 5px 0 0;
-        }
       }
     }
   }
@@ -134,107 +84,6 @@
           @include breakpoint() {
             padding: 16px 0;
             font-size: 16px;
-          }
-        }
-
-        .areas {
-          display: flex;
-          flex-wrap: wrap;
-          padding: 52px 88px 50px;
-          background-color: #fff;
-          border-radius: 0 0 10px 10px;
-
-          @include breakpoint() {
-            padding: 28px 55px 16px 23px;
-          }
-          li {
-            position: relative;
-            display: block;
-            width: 112px;
-            padding: 0 0 0 14px;
-            margin: 0 0 15px 20px;
-            font-weight: normal;
-            color: #000;
-            &::before {
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              left: -20px;
-              width: 0;
-              height: 0;
-              margin: auto;
-              content: "";
-              border-color: transparent transparent transparent #0c7ed3;
-              border-style: solid;
-              border-width: 10px 0 10px 20px;
-              @include breakpoint() {
-                left: -13px;
-                border-width: 5px 0 5px 10px;
-              }
-            }
-            .area-link {
-              font-size: 20px;
-              line-height: 170%;
-              text-decoration: underline;
-            }
-            @include breakpoint() {
-              width: 50px;
-              padding: 0;
-              margin: 0 4px 15px 15px;
-              .area-link {
-                font-size: 12px;
-              }
-            }
-            .area-modal-wrapper {
-              position: fixed;
-              top: 0; bottom: 0; right: 0; left: 0;
-              pointer-events: none;
-              opacity: 0;
-              transition-duration: .3s;
-              z-index: 9999;
-              &.active {
-                opacity: 1;
-                pointer-events: auto;
-              }
-              .area-modal-bg {
-                position: absolute;
-                width: 100%; height: 100%;
-                background-color: rgba(0,0,0,.6);
-              }
-              .area-modal {
-                position: absolute;
-                top: 50%; left: 50%;
-                transform: translate(-50%, -50%);
-                width: calc(100% - 32px);
-                max-width: 1200px;
-                margin: 0 !important;
-                .area-modal-close {
-                  position: absolute;
-                  top: 0; right: 0;
-                  transform: translateY(-100%);
-                  font-size: 40px;
-                  line-height: 1;
-                  cursor: pointer;
-                  font-weight: lighter;
-                  color: #fff;
-                  @media screen and (max-width: 460px) {
-                    font-size: 28px;
-                  }
-                }
-                .area-block-ttl {
-                  text-decoration: underline;
-                }
-                @include breakpoint() {
-                  .areas li {
-                    width: 33.333%;
-                    min-width: unset;
-                  }
-                  .area-link {
-                    padding: 0 1.4vw;
-                  }
-                }
-              }
-            }
           }
         }
       }
@@ -327,20 +176,52 @@
   }
 }
 
-._small-area {
-  margin: 0 !important;
-}
+.post-list-top {
+  padding: 0 3vw;
+  
+  &-wrap {
+    max-width: 865px;
+    margin: 0 auto;
+    line-height: 1.5;
 
-.date-area._article {
-  max-width: 1200px;
-  margin: -45px auto 30px;
-  padding: 0 30px 0;
-  text-align: right;
-  font-size: 0.8rem;
-  color: gray;
+    .slick-list {
+      padding: 0 0 0 30.5% !important;
+    }
 
-  @include breakpoint() {
-    font-size: 12px;
-    padding: 0 20px 0;
+    .slick-slide {
+      margin: 0 10px;
+    }
+  }
+
+  &-img {
+    position: relative;
+    width: 100%;
+    padding-top: 62.06%;
+    border-radius: 8px;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-head {
+    color: $base_royal_blue;
+    font-weight: bold;
+    margin: 15px 0 0;
+  }
+
+  &-taxonomy {
+    @include taxonomy_style(10px);
+  }
+
+  &-txt {
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
   }
 }

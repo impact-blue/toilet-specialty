@@ -1,254 +1,120 @@
-.reason-of-choose {
-  margin: 1.4vw 0 0;
+.reason {
+  padding: 0 3vw 50px;
+  background: $base_light_blue;
 
-  &._page {
-    margin-bottom: -50px;
-
-    @include breakpoint() {
-      margin-bottom: -40px;
-    }
+  &-ttl {
+    @include heading();
+    margin: 0 0 60px 0 !important;
   }
 
-  .content {
-    padding: 4.3vw 0;
-    margin: -3.5vw 0 0;
-    background-color: $base_light_turquoise;
-    margin: 0 calc(50% - 50vw) -50px;
-    @include breakpoint() {
-      width: 100vw;
-      padding: 111px 0 11.8vw;
-      margin: -75px 0 -40px;
-      position: relative;
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  &-item {
+    width: calc(100% / 4 - 47px * 3 / 4);
+    padding: 50px 10px 30px;
+    padding: 5% 1% 3%;
+    background: #fff;
+    border: solid 3px #004a8e;
+    border-radius: 10px;
+    position: relative;
+
+    &:nth-of-type(n + 5) {
+      margin-top: 40px; 
+    }
+
+    &::before {
+      position: absolute;
+      width: 23.004%;
+      padding: 5.97% 0;
+      text-align: center;
+      border-radius: 50%;
+      font-size: clamp(18px, 0.233rem + 1.86vw, 26px);
+      font-weight: bold;
+      font-family: "Roboto", sans-serif;
+      color: #fff;
+      background: $base_royal_blue;
+      top: -11%;
       left: 50%;
       transform: translateX(-50%);
     }
 
+    &:first-of-type {
+      &::before {
+        content: '01';
+      }
+    }
+
     &:nth-of-type(2) {
-      @include breakpoint() {
-        padding: 20px 0 11.8vw;
+      &::before {
+        content: '02';
       }
     }
 
-    &._low {
-      @include breakpoint() {
-        margin-top: 0;
-        padding: 20px 0 0 0;
+    &:nth-of-type(3) {
+      &::before {
+        content: '03';
       }
     }
 
-    &._area {
-      padding: 90px 0 0 0;
+    &:nth-of-type(4) {
+      &::before {
+        content: '04';
+      }
+    }
+
+    &:nth-of-type(5) {
+      &::before {
+        content: '05';
+      }
+    }
+
+    &:nth-of-type(6) {
+      &::before {
+        content: '06';
+      }
+    }
+
+    &:nth-of-type(7) {
+      &::before {
+        content: '07';
+      }
+    }
+
+    &:nth-of-type(8) {
+      &::before {
+        content: '08';
+      }
+    }
+
+    &.second {
+      .reason-txt {
+        font-size: clamp(13px, 0.143rem + 1.39vw, 19px);
+      }
+
+      .reason-icon {
+        margin: 11% auto 0;
+      }
     }
   }
 
-    #toc_area {
-      .post-content {
-        max-width: 100%;
-      }
-    }
-
-  .sub-header {
-    width: 100%;
-    font-size: 24px;
+  &-txt {
+    font-size: clamp(16px, 0.331rem + 1.39vw, 22px);
+    color: $base_royal_blue;
+    line-height: 1.5;
     text-align: center;
-    margin: 0;
-    @include breakpoint() {
-      font-size: 20px;
-      padding: 0;
-    }
+    font-weight: bold;
 
-    &::before {
-      display: none;
+    span {
+      background:linear-gradient(transparent 60%, #FFFBA0 60%);
     }
   }
-  .inner {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px 0;
-    align-items: flex-start;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 6.9vw auto 0;
-    @include breakpoint() {
-      gap: 5.4vw 3.8vw;
-      margin: 10.8vw auto 35px;
-    }
 
-    &._top {
-      justify-content: initial;
-      margin-top: 70px;
-      padding: 0 30px;
-
-      @include breakpoint() {
-        margin-top: 30px;
-        padding: 0 15px;
-      }
-    }
-  }
-  .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    text-align: center;
-    @include breakpoint() {
-      width: 45vw;
-    }
-    @media screen and (max-width: 320px) {
-      width: 90vw;
-    }
-    .icon {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 235px;
-      height: 235px;
-      margin: 0 auto;
-      background-color: #fff;
-      border-radius: 100%;
-      @include breakpoint() {
-        width: 32.6vw;
-        height: 32.6vw;
-      }
-      img {
-        width: unset;
-        height: unset;
-        @include breakpoint() {
-          width: 16.85vw;
-          height: 16.85vw;
-        }
-      }
-      .num {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 61px;
-        height: 61px;
-        font-family: "Oswald", sans-serif;
-        font-size: 26px;
-        border-radius: 100%;
-        @include breakpoint() {
-          width: 8.1vw;
-          height: 8.1vw;
-          font-size: clamp(12px, 3.4vw, 26px);
-        }
-      }
-    }
-    .header {
-      margin: 18px 0 0;
-      font-size: 20.7px;
-      line-height: 1.5;
-      @include breakpoint() {
-        font-size: clamp(14px, 2.7vw, 21px);
-      }
-      @media screen and (max-width: 400px) {
-        .pc-br {
-          display: none;
-        }
-      }
-      &._top {
-        margin: 0 0 0 45px;
-      }
-    }
-    .description {
-      width: 246px;
-      margin: 31px 0 0;
-      font-size: 16px;
-      line-height: 2;
-      text-align: left;
-      @include breakpoint() {
-        width: 100%;
-        margin: 4.7vw 0 0;
-        font-size: clamp(14px, 2.9vw, 22px);
-      }
-
-      &._top {
-        width: 100%;
-        margin: 20px 0 0;
-      }
-    }
-
-    &._top {
-      width: calc(50% - 50px / 2);
-      display: block;
-      text-align: left;
-      position: relative;
-
-      @include breakpoint {
-        width: 100%;
-      }
-
-      &:not(:nth-child(2n + 1)) {
-        margin-left: 50px;
-
-        @include breakpoint {
-          margin-left: 0;
-        }
-      }
-
-      &:nth-child(n + 3) {
-        margin-top: 20px;
-
-        @include breakpoint {
-          margin-top: 0;
-        }
-      }
-
-      &:not(:first-of-type) {
-        @include breakpoint {
-          margin-top: 20px;
-        }
-      }
-    }
-  }
-}
-
-.subttl {
-  font-size: 20.7px;
-  color: #1b43ab;
-  line-height: 1.5;
-  text-align: center;
-  margin-top: 20px;
-
-  @include breakpoint {
-    font-size: 16px;
-    padding: 0 15px;
-  }
-}
-
-.num {
-  &._top {
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    font-family: "Oswald", sans-serif;
-    font-size: 16px;
-    border-radius: 100%;
-    background-color: #f6a030;
-    color: #fff;
-    @include breakpoint() {
-      width: 30px;
-      height: 30px;
-      font-size: clamp(12px, 3.4vw, 26px);
-      left: 0;
-    }
-  }
-}
-
-.roc-shortcode {
-  margin-bottom: -50px;
-
-  @include breakpoint() {
-    margin-bottom: -40px;
+  &-icon {
+    width: 30%;
+    margin: 16% auto 0;
   }
 }

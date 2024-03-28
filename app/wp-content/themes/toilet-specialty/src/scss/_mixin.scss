@@ -76,8 +76,8 @@
 @mixin heading() {
   display: block;
   padding: 50px 0 30px !important;
-  margin: 0 0 40px 0 !important;
-  font-size: 38px !important;
+  margin: 0 auto 40px !important;
+  font-size: clamp(31px, 2.6vw, 38px) !important;
   color: $base_royal_blue !important;
   text-align: center !important;
   background-color: transparent !important;
@@ -124,6 +124,17 @@
     left: calc(50% + 165px);
     transform: translate(-50%, -50%) rotate(45deg);
   }
+}
+
+@mixin taxonomy_style($mt) {
+  margin: $mt 5px 0 0;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #fff;
+  background: #2e86d8;
+  border-radius: 30px;
+  display: inline-block;
 }
 
 @mixin h2_style() {

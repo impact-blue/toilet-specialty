@@ -77,6 +77,18 @@ function jsgt_styles() {
 }
 add_action('wp_enqueue_scripts', 'jsgt_styles');
 
+// テンプレートファイルのヘッダーにSlickのCSSを追加
+function enqueue_slick_css() {
+  wp_enqueue_style('slick-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css');
+}
+add_action('wp_enqueue_scripts', 'enqueue_slick_css');
+
+// テンプレートファイルのフッターにSlickのJSを追加
+function enqueue_slick_js() {
+  wp_enqueue_script('slick-js', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), '1.8.1', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_slick_js');
+
 // フォントを読み込む
 function load_google_fonts() {
   wp_enqueue_style( 'noto-sans-jp', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap', array(), null );
